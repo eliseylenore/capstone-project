@@ -26,7 +26,11 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
-      }
+      },
+      "styles": [
+        "styles.css",
+        "../bower_components/bootstrap/dist/css/bootstrap.css"
+      ]
     }
   ],
   "e2e": {
