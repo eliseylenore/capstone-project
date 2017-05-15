@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Create about page
 
 **User should be able to view products**
-* Create Product model: Product Name, Gender, Clothing, Price, Size, Color, Quantity, Description, Image Url
+* Create Product model: Product Name, Gender, Clothing, Price, Size, Color, Quantity, Description, ImageUrl
 * Set up Firebase database and pre-seed it
 * Make product-list component (view within home page)
 
