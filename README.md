@@ -2,6 +2,53 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
+## User stories/Specs
+**User should be able to see basic website**
+* Create home page
+* Create layout page(dashboard)
+* Create about page
+
+**User should be able to view products**
+* Create Product model: Product Name, Gender, Clothing, Price, Size, Color, Quantity, Description, Image Url
+* Set up Firebase database and pre-seed it
+* Make product-list component (view within home page)
+
+**User should be able to view the items by categories**
+* Create pipe to filter by size
+* Create pipe to filter by gender
+* Create pipe to filter by color
+* Create pipe to filter by price
+* Create pipe to filter by clothing(tops, bottoms, etc.)
+
+**User should be able to view each individual item**
+* Create product-detail page
+
+**User should be able to add product to basket/cart**
+* Create Cart model: List <Product>, Total Price
+* Create component added-to-bag
+* Create button to click
+* Create Alert that you have added items
+* Create new item to add to basket/cart
+
+
+**User should be able to checkout and purchase item**
+* Create Sale model: Cart, Date
+* Create component checkout/buy
+* Create Sale itself
+
+**User should be able to enter their credit card info**
+* Possible customer model to be added to sale??
+* Enter email
+* Enter shipping address/billing address
+* Enter credit card info
+
+**User should receive confirmation of their order**
+* Display shipping info, address, Name
+* Send confirmation to email
+* Redirect to home page
+
+**
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
