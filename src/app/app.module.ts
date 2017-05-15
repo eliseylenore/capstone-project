@@ -6,15 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
-import { ProductComponent } from './product/product.component';
 import { routing } from './app.routing';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AboutComponent,
-    ProductComponent
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
