@@ -10,9 +10,8 @@ const appRoutes: Routes = [
 
   },
   {
-    path: '/about',
+    path: 'about',
     component: AboutComponent
-
   }
 ];
 
