@@ -1,11 +1,11 @@
 <h2>Products</h2>
-<select (change)="onChange($event.target.value)">
+<select (change)="onSizeChange($event.target.value)">
   <option value="allSizes" selected="selected">All Sizes</option>
   <option value="smallProducts">Small</option>
   <option value="mediumProducts">Medium</option>
   <option value="largeProducts">Large</option>
 </select>
-<select (change)="onChange($event.target.value)">
+<select (change)="onGenderChange($event.target.value)">
   <option value="allGenders" selected="selected">Men & Women</option>
   <option value="female">Women</option>
   <option value="male">Men</option>

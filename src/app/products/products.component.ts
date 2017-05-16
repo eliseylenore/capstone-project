@@ -19,11 +19,13 @@ export class ProductsComponent implements OnInit {
   filterBySize: string = "allSizes";
   filterByGender: string = "allGenders";
 
-  onChange(optionFromMenu) {
-    this.filterBySize = optionFromMenu;
-    this.filterByGender = optionFromMenu;
-  }
+  onSizeChange(optionFromSizeMenu) {
+    this.filterBySize = optionFromSizeMenu;
 
+  }
+  onGenderChange(optionFromGenderMenu) {
+    this.filterByGender = optionFromGenderMenu;
+  }
   ngOnInit() {
     this.products = this.productService.getProducts();
   }
