@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SizePipe } from './size.pipe';
 import { GenderPipe } from './gender.pipe';
 import { ColorPipe } from './color.pipe';
+import { PricePipe } from './price.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     ProductsComponent,
     SizePipe,
     GenderPipe,
-    ColorPipe
+    ColorPipe,
+    PricePipe
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,28 @@
 <h2>Products</h2>
 <select (change)="onSizeChange($event.target.value)">
-  <option value="allSizes" selected="selected">All Sizes</option>
+  <option value="allSizes" selected="selected">Size</option>
   <option value="smallProducts">Small</option>
   <option value="mediumProducts">Medium</option>
   <option value="largeProducts">Large</option>
 </select>
 <select (change)="onGenderChange($event.target.value)">
-  <option value="allGenders" selected="selected">Men & Women</option>
+  <option value="allGenders" selected="selected">Gender</option>
   <option value="female">Women</option>
   <option value="male">Men</option>
 </select>
 <select (change)="onColorChange($event.target.value)">
-  <option value="allColors" selected="selected">All Colors</option>
+  <option value="allColors" selected="selected">Color</option>
   <option value="black">Black</option>
   <option value="white">White</option>
   <option value="blue">Blue</option>
 </select>
-<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor" class="panel panel-default">
+<select (change)="onPriceChange($event.target.value)">
+  <option value="allColors" selected="selected">Price</option>
+  <option value="under50">Under $50</option>
+  <option value="under100">Under $100</option>
+  <option value="over100">$100+</option>
+</select>
+<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{product.name}}</em> <img src="{{product.imageUrl}}" /></h3>
   </div>
