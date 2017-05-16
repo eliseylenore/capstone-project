@@ -22,7 +22,15 @@
   <option value="under100">Under $100</option>
   <option value="over100">$100+</option>
 </select>
-<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice" class="panel panel-default">
+<select (change)="onClothingChange($event.target.value)">
+  <option value="allClothing" selected="selected">Type</option>
+  <option value="pants">Pants</option>
+  <option value="jacket">Jackets</option>
+  <option value="shoes">Shoes</option>
+  <option value="outer">Outers</option>
+  <option value="accessories">Accessories</option>
+</select>
+<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{product.name}}</em> <img src="{{product.imageUrl}}" /></h3>
   </div>
