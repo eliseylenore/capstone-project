@@ -1,4 +1,32 @@
-# CapstoneProject
+# Capstone Project: Dress To Impress
+### By **Jiwon Kang & Elise St Hilaire**
+
+## Online store for fabulous job seekers, 05/15/2017
+![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)
+
+### Description
+_As job seekers ourselves, we know that looking for a fulltime job is not for the faint of heart. Even the smallest things can effect an impression. Since this is the case, we decided to open an online store that helps job seekers find professional-looking, worry-free clothing._
+
+_Our site features interview-worthy clothing for men and women of all ages. We have utilized the Stripe API, which allowed us to easily incorporate payments._
+
+### Setup
+_Since our site uses a Firebase database, you'll need to acquire your own Firebase credentials._
+
+_Simply open your own account on the [Firebase website](https://firebase.google.com/)_
+
+_Next, go to your user dashboard area and click **Create a New Project**.  Select **Add Firebase to your web app* and Firebase should respond with a pop-up window with your credentials._
+
+_Now that your database exists, create a new file called **api-keys.ts** in the **src/app** directory. Then, place your Firebase credentials, like this:_
+
+```export var masterFirebaseConfig = {
+  apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+};```
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
