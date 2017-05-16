@@ -5,7 +5,12 @@
   <option value="mediumProducts">Medium</option>
   <option value="largeProducts">Large</option>
 </select>
-<div *ngFor="let product of products | async | size:filterBySize" class="panel panel-default">
+<select (change)="onChange($event.target.value)">
+  <option value="allGenders" selected="selected">Men & Women</option>
+  <option value="female">Women</option>
+  <option value="male">Men</option>
+</select>
+<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{product.name}}</em> <img src="{{product.imageUrl}}" /></h3>
   </div>

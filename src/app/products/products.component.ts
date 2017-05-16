@@ -17,9 +17,11 @@ export class ProductsComponent implements OnInit {
   products: FirebaseListObservable<any[]>;
 
   filterBySize: string = "allSizes";
+  filterByGender: string = "allGenders";
 
   onChange(optionFromMenu) {
     this.filterBySize = optionFromMenu;
+    this.filterByGender = optionFromMenu;
   }
 
   ngOnInit() {
