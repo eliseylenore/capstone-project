@@ -18,7 +18,8 @@ _Next, go to your user dashboard area and click **Create a New Project**.  Selec
 
 _Now that your database exists, create a new file called **api-keys.ts** in the **src/app** directory. Then, place your Firebase credentials, like this:_
 
-```export var masterFirebaseConfig = {
+```a
+export var masterFirebaseConfig = {
   apiKey: "xxxx",
     authDomain: "xxxx.firebaseapp.com",
     databaseURL: "https://xxxx.firebaseio.com",
