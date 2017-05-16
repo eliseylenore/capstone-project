@@ -24,7 +24,8 @@ _Now that your database exists, create a new file called **api-keys.ts** in the 
     databaseURL: "https://xxxx.firebaseio.com",
     storageBucket: "xxxx.appspot.com",
     messagingSenderId: "xxxx"
-};```
+};
+```
 
 
 
