@@ -44,5 +44,16 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"
-  }
+  },
+  "description": "![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiwonk42/capstone-project.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jiwonk42/capstone-project/issues"
+  },
+  "homepage": "https://github.com/jiwonk42/capstone-project#readme"
 }

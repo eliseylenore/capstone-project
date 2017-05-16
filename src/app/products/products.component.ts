@@ -16,6 +16,12 @@ export class ProductsComponent implements OnInit {
   constructor(private productService: ProductService) {}
   products: FirebaseListObservable<any[]>;
 
+  filterBySize: string = "allSizes";
+
+  onChange(optionFromMenu) {
+    this.filterBySize = optionFromMenu;
+  }
+
   ngOnInit() {
     this.products = this.productService.getProducts();
   }

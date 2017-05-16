@@ -1,6 +1,11 @@
 <h2>Products</h2>
-
-<div *ngFor="let product of products | async" class="panel panel-default">
+<select (change)="onChange($event.target.value)">
+  <option value="allSizes" selected="selected">All Sizes</option>
+  <option value="smallProducts">Small</option>
+  <option value="mediumProducts">Medium</option>
+  <option value="largeProducts">Large</option>
+</select>
+<div *ngFor="let product of products | async | size:filterBySize" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{product.name}}</em> <img src="{{product.imageUrl}}" /></h3>
   </div>

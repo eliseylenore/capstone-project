@@ -3,7 +3,7 @@
   "description": "Online store for interview supplies",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/jiwonk42/capstone-project",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -11,6 +11,7 @@ import { ProductsComponent } from './products/products.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { SizePipe } from './size.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,7 +25,8 @@ export const firebaseConfig = {
     AppComponent,
     DashboardComponent,
     AboutComponent,
-    ProductsComponent
+    ProductsComponent,
+    SizePipe
   ],
   imports: [
     BrowserModule,
