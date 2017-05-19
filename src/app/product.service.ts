@@ -14,4 +14,8 @@ export class ProductService {
   getProducts() {
     return this.products;
   }
+
+  getProductById(productId: string) {
+    return this.database.object('products/' + productId);
+  }
 }
