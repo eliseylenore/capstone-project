@@ -42,7 +42,7 @@
     </select>
   </div>
 <div class="form-inline">
-<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="panel panel-default">
+<div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="panel panel-default" (click)="goToDetailPage(product)">
   <div class="panel-body">
     <h3><em>{{product.name}}</em> <img src="{{product.imageUrl}}" /></h3>
   </div>
