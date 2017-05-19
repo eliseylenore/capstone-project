@@ -8,14 +8,12 @@
       width:100%;
       border-color: black;
       background: black;
-}
-
-.navbar-default .navbar-brand:hover {
-    color: white;
-}
-
-.navbar-default .navbar-brand {
-    font-size: 30px;
-    font-family: 'Muli', sans-serif;
-    color: white;
+      .navbar-brand {
+          font-size: 30px;
+          font-family: 'Muli', sans-serif;
+          color: white;
+      }
+      .navbar-brand:hover {
+          color: white;
+      }
 }
