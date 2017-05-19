@@ -1,4 +1,10 @@
-<button type="button" name="button" *ngIf="!showAlert">Add to bag!</button>
-<p class="red" *ngIf="showAlert">
+<button (click)="addToBag()" type="button" class="btn btn-default" *ngIf="!showAlert">Add to bag!</button>
+<div *ngIf="showAlert">
+<p class="red">
   You've added an item to your bag :)
 </p>
+  <div class="btn-group">
+    <button type="button" class="btn btn-sm btn-default red">Edit</button>
+    <button type="button" class="btn btn-sm btn-default red" (click)="removeFromBag()">Remove</button>
+  </div>
+</div>

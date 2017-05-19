@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddedToBagComponent implements OnInit {
   showAlert: boolean = false;
+  addToBag() {
+    this.showAlert=true;
+  }
+
+  removeFromBag() {
+    this.showAlert=false;
+  }
   constructor() { }
 
   ngOnInit() {

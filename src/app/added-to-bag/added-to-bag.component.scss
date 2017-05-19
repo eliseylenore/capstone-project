@@ -1,3 +1,12 @@
 .red {
   color: red;
+  display: inline;
+}
+
+.btn-group .btn-default {
+  border: none;
+  &:hover, &:focus {
+    background-color: white;
+    outline: none;
+  }
 }
