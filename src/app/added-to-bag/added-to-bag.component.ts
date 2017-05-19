@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./added-to-bag.component.scss']
 })
 export class AddedToBagComponent implements OnInit {
-
+  showAlert: boolean = false;
   constructor() { }
 
   ngOnInit() {

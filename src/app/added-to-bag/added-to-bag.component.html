@@ -1,4 +1,4 @@
-<button type="button" name="button">Add to bag!</button>
-<p class="red">
+<button type="button" name="button" *ngIf="!showAlert">Add to bag!</button>
+<p class="red" *ngIf="showAlert">
   You've added an item to your bag :)
 </p>
