@@ -8,6 +8,5 @@ export class Product {
     public color: string,
     public quantity: number,
     public description: string,
-    public imageUrl: string,
-    public id: string) {}
+    public imageUrl: string) {}
 }
