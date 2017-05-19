@@ -1,4 +1,5 @@
 export class Product {
+  public quantity: number;
   constructor (
     public name: string,
     public gender: string,
@@ -6,7 +7,8 @@ export class Product {
     public price: number,
     public size: string,
     public color: string,
-    public quantity: number,
     public description: string,
-    public imageUrl: string) {}
+    public imageUrl: string) {
+      this.quantity = 1;
+    }
 }
