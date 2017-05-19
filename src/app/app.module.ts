@@ -17,6 +17,7 @@ import { ColorPipe } from './color.pipe';
 import { PricePipe } from './price.pipe';
 import { ClothingPipe } from './clothing.pipe';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AddedToBagComponent } from './added-to-bag/added-to-bag.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -36,7 +37,8 @@ export const firebaseConfig = {
     ColorPipe,
     PricePipe,
     ClothingPipe,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddedToBagComponent
   ],
   imports: [
     BrowserModule,
