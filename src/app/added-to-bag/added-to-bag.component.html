@@ -1,7 +1,7 @@
-<button (click)="addToBag()" type="button" class="btn btn-default" *ngIf="!showAlert">Add to bag!</button>
+<button (click)="addToBag()" type="button" class="btn btn-default" *ngIf="!showAlert" >Add to bag!</button>
 <div *ngIf="showAlert">
 <p class="red">
-  You've added an item to your bag :)
+  You've added {{(productToDisplay | async)?.name}} to your bag :)
 </p>
   <div class="btn-group">
     <button type="button" class="btn btn-sm btn-default red">Edit</button>
