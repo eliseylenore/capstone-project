@@ -11,6 +11,11 @@ import { Product } from './../product.model';
 export class AddedToBagComponent implements OnInit {
   @Input() productToDisplay = Product;
   showAlert: boolean = false;
+
+  newProduct(product: Product) {
+    var newProductToAdd: Product = new Product(product.name, product.gender, product.clothing, product.price, product.size, product.color, product.description, product.imageUrl);
+  }
+  
   addToBag() {
     this.showAlert=true;
   }
