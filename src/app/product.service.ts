@@ -15,6 +15,10 @@ export class ProductService {
     return this.products;
   }
 
+  addProduct(newProduct: Product) {
+    this.products.push(newProduct);
+  }
+
   getProductById(productId: string) {
     return this.database.object('products/' + productId);
   }

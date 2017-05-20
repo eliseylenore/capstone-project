@@ -1,21 +1,35 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './../product.model';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-added-to-bag',
   templateUrl: './added-to-bag.component.html',
-  styleUrls: ['./added-to-bag.component.scss']
+  styleUrls: ['./added-to-bag.component.scss'],
+  providers: [ProductService]
 })
 
 
-export class AddedToBagComponent implements OnInit {
+export class AddedToBagComponent {
+  constructor(private productService: ProductService) { }
+
   @Input() productToDisplay = Product;
+
   showAlert: boolean = false;
 
-  newProduct(product: Product) {
-    var newProductToAdd: Product = new Product(product.name, product.gender, product.clothing, product.price, product.size, product.color, product.description, product.imageUrl);
+  newProduct(thisProduct: Product) {
+    var name = thisProduct.name;
+    var gender = thisProduct.gender;
+    var clothing = thisProduct.clothing;
+    var price = thisProduct.price;
+    var size = thisProduct.size;
+    var color = thisProduct.color;
+    var description = thisProduct.description;
+    var imageUrl = thisProduct.imageUrl;
+    var newProductToAdd: Product = new Product(name, gender, clothing, price, size, color, description, imageUrl);
+    this.productService.addProduct(newProductToAdd);
   }
-  
+
   addToBag() {
     this.showAlert=true;
   }
@@ -23,9 +37,6 @@ export class AddedToBagComponent implements OnInit {
   removeFromBag() {
     this.showAlert=false;
   }
-  constructor() { }
 
-  ngOnInit() {
-  }
 
 }
