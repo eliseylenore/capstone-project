@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from './../product.model';
+import { Cart } from './../cart.model';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -27,7 +28,9 @@ export class AddedToBagComponent {
     imageUrl: string) {
       console.log("chosen product: " + name);
       var newItem = new Product(name, gender, clothing, price, size, color, description, imageUrl);
+      var newCart = new Cart([newItem], 173);
       this.productService.addItem(newItem);
+      this.productService.addCart(newCart);
   }
 
   addToBag() {

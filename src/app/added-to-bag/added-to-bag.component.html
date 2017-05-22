@@ -6,7 +6,7 @@
 <input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
 <input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
 <input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
-<button (click)="addToBag(); newItem(name.value, gender.value, clothing.value, price.value, size.value, color.value, description.value, imageUrl.value)" class="btn btn-default" *ngIf="!showAlert">{{ name.value}}</button>
+<button (click)="addToBag(); newItem(name.value, gender.value, clothing.value, price.value, size.value, color.value, description.value, imageUrl.value)" class="btn btn-default" *ngIf="!showAlert">Add to cart!</button>
 <div *ngIf="showAlert">
 <p class="red">
   You've added {{(productToDisplay | async)?.name}} to your bag :)
