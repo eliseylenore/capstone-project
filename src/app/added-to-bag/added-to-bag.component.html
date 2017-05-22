@@ -1,4 +1,12 @@
-<button (click)="addToBag(); newProduct(productToDisplay)" type="button" class="btn btn-default" *ngIf="!showAlert" >Add to bag!</button>
+<input #name style="display: none" type="text" value="{{(productToDisplay | async)?.name }}">
+<input #gender style="display: none" type="text" value="{{(productToDisplay | async)?.gender }}">
+<input #clothing style="display: none" type="text" value="{{(productToDisplay | async)?.clothing }}">
+<input #price style="display: none" type="text" value="{{(productToDisplay | async)?.price }}">
+<input #size style="display: none" type="text" value="{{(productToDisplay | async)?.size }}">
+<input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
+<input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
+<input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
+<button (click)="addToBag(); newProduct(name.value, gender.value, clothing.value, price.value, size.value, color.value, description.value, imageUrl.value)" class="btn btn-default" *ngIf="!showAlert">{{ name.value}}</button>
 <div *ngIf="showAlert">
 <p class="red">
   You've added {{(productToDisplay | async)?.name}} to your bag :)
