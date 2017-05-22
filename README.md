@@ -59,6 +59,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Create button to click
 * Create Alert that you have added items (toggle the button/alert)
 * Create new item to add to basket/cart (create new item and new cart simultaneously)
+* Delete item from cart
 
 
 **User should be able to checkout and purchase item**
