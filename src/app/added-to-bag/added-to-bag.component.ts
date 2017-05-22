@@ -16,7 +16,7 @@ export class AddedToBagComponent {
   @Input() productToDisplay = Product;
   showAlert: boolean = false;
 
-  newProduct(
+  newItem(
     name: string,
     gender: string,
     clothing: string,
@@ -26,8 +26,8 @@ export class AddedToBagComponent {
     description: string,
     imageUrl: string) {
       console.log("chosen product: " + name);
-      var newProduct = new Product(name, gender, clothing, price, size, color, description, imageUrl);    
-      this.productService.addProduct(newProduct);
+      var newItem = new Product(name, gender, clothing, price, size, color, description, imageUrl);
+      this.productService.addItem(newItem);
   }
 
   addToBag() {

@@ -6,17 +6,19 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class ProductService {
   products: FirebaseListObservable<any[]>;
+  items: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
     this.products = database.list('products');
+    this.items = database.list('items');
   }
 
   getProducts() {
     return this.products;
   }
 
-  addProduct(newProduct: Product) {
-    this.products.push(newProduct);
+  addItem(newItem: Product) {
+    this.items.push(newItem);
   }
 
   getProductById(productId: string) {
