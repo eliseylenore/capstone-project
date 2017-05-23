@@ -10,9 +10,9 @@ export class Cart {
 
 		determineTotalPrice(products) {
 			var totalPrice = 0;
-			products.forEach(function(product) {
-				totalPrice += product.price * product.quantity;
-			});
+			products.forEach((product) =>
+				totalPrice += product.price * product.quantity
+			);
 			return totalPrice;
 		}
 }
