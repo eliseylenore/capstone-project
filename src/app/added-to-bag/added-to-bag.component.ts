@@ -33,13 +33,13 @@ export class AddedToBagComponent {
       this.productService.addCart(newCart);
   }
 
-  addToBag() {
-    this.showAlert=true;
-  }
-
-  removeFromBag() {
-    this.showAlert=false;
-  }
+  // addToBag() {
+  //   this.showAlert=true;
+  // }
+  //
+  // removeFromBag() {
+  //   this.showAlert=false;
+  // }
 
 
 }
