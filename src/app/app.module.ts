@@ -45,7 +45,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig, 'capstone-project'),
     AngularFireDatabaseModule
   ],
   providers: [],
