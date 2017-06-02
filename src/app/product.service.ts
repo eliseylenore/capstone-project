@@ -29,13 +29,19 @@ export class ProductService {
   //   this.carts.push(newCart);
   // }
 
-  addItemToCart() {
+  addItemToCart(newItem) {
+
     let cartReference = this.database.object('/carts/');
-    cartReference.on("value", function(snapshot) {
-      console.log(snapshot.val());
-    }, function(errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
+    this.carts.subscribe((snapshot) => {
+    if (snapshot) {
+      let lastCart = snapshot[snapshot.length - 1];
+      let thisCartItems = this.database.list('carts/' + lastCart.$key + '/items/');
+      console.log(thisCartItems);
+
+      thisCartItems.push(newItem);
+
+    };
+  });
   }
 
   getProductById(productId: string) {
