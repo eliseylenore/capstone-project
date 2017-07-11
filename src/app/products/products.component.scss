@@ -1,3 +1,22 @@
+.btn-default {
+  border: none;
+  background-color: #e6e6e6;
+}
+
+.form-control {
+  border: none;
+  background: #F8B16C;
+  color: white;
+  height: 25px;
+  padding: 3px;
+  select {
+    border-radius: 0;
+  }
+}
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
 .product-list {
   .img {
     position: relative;
