@@ -16,7 +16,7 @@ $ npm install
 $ bower install
 ```
 
-### Setup
+### Setup Firebase
 _Since our site uses a Firebase database, you'll need to acquire your own Firebase credentials._
 
 _Simply open your own account on the [Firebase website](https://firebase.google.com/)_
@@ -35,7 +35,11 @@ export var masterFirebaseConfig = {
 };
 ```
 
-
+### Serve
+Run the following command to run the app:
+```sh
+$ ng serve
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
