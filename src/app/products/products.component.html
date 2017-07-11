@@ -1,7 +1,11 @@
 <h2>Products</h2>
 <div class="row">
   <div class="col-xs-12">
-    <div class="form-inline">
+    <p [hidden]="!filterItems" (click)="filterItems=false">Hide filters</p>
+    <template [ngIf]="!filterItems">
+      <button (click)="filterItems = !filterItems" class="btn btn-default"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>Filter</button>
+    </template>
+    <div [hidden]="!filterItems" class="form-inline">
       <div class="form-group">
         <select class="form-control" (change)="onSizeChange($event.target.value)">
           <option value="allSizes" selected="selected">Size</option>

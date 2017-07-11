@@ -9,6 +9,7 @@
     background-size:     cover;
   }
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: stretch;
   .panel {
@@ -16,5 +17,11 @@
   }
   .item {
     margin: 20px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-list {
+    flex-direction: row;
   }
 }
