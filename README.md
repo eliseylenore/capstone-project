@@ -9,6 +9,13 @@ _As job seekers ourselves, we know that looking for a fulltime job is not for th
 
 _Our site features interview-worthy clothing for men and women of all ages. We have utilized the Stripe API, which allowed us to easily incorporate payments._
 
+### Installation
+Run the following commands to install dependencies:
+```sh
+$ npm install
+$ bower install
+```
+
 ### Setup
 _Since our site uses a Firebase database, you'll need to acquire your own Firebase credentials._
 
@@ -18,7 +25,7 @@ _Next, go to your user dashboard area and click **Create a New Project**.  Selec
 
 _Now that your database exists, create a new file called **api-keys.ts** in the **src/app** directory. Then, place your Firebase credentials, like this:_
 
-```a
+```sh
 export var masterFirebaseConfig = {
   apiKey: "xxxx",
     authDomain: "xxxx.firebaseapp.com",
