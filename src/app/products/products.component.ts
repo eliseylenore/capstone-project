@@ -45,4 +45,11 @@ export class ProductsComponent implements OnInit {
   goToDetailPage(clickedProduct) {
     this.router.navigate(['products', clickedProduct.$key]);
   };
+
+  // if (product.image) {
+  // product.image =
+  //          product.sanitization.bypassSecurityTrustStyle('url(' + product.imageUrl + ')');
+  // } else {
+  //   product.image = null;
+  // }
 }

@@ -51,7 +51,9 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-md-5">
-          <img src="{{product.imageUrl}}"/>
+          <div class="img" [ngStyle]= "{'background-image': 'url(' + product.imageUrl + ')'}">
+          </div>
+          <!-- <img src="{{product.imageUrl}}"/> -->
         </div>
         <div class="col-xs-12 col-md-7">
           <h2>{{product.name}}</h2>
