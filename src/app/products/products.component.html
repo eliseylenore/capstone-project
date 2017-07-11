@@ -1,56 +1,59 @@
 <h2>Products</h2>
-<div class="form-inline">
-  <div class="form-group">
-    <select class="form-control" (change)="onSizeChange($event.target.value)">
-      <option value="allSizes" selected="selected">Size</option>
-      <option value="smallProducts">Small</option>
-      <option value="mediumProducts">Medium</option>
-      <option value="largeProducts">Large</option>
-    </select>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="form-inline">
+      <div class="form-group">
+        <select class="form-control" (change)="onSizeChange($event.target.value)">
+          <option value="allSizes" selected="selected">Size</option>
+          <option value="smallProducts">Small</option>
+          <option value="mediumProducts">Medium</option>
+          <option value="largeProducts">Large</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select  class="form-control" (change)="onGenderChange($event.target.value)">
+          <option value="allGenders" selected="selected">Gender</option>
+          <option value="female">Women</option>
+          <option value="male">Men</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select  class="form-control" (change)="onColorChange($event.target.value)">
+          <option value="allColors" selected="selected">Color</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="blue">Blue</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select  class="form-control" (change)="onPriceChange($event.target.value)">
+          <option value="allColors" selected="selected">Price</option>
+          <option value="under50">Under $50</option>
+          <option value="under100">Under $100</option>
+          <option value="over100">$100+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select  class="form-control" (change)="onClothingChange($event.target.value)">
+          <option value="allClothing" selected="selected">Type</option>
+          <option value="pants">Pants</option>
+          <option value="jacket">Jackets</option>
+          <option value="shoes">Shoes</option>
+          <option value="outer">Outers</option>
+          <option value="accessories">Accessories</option>
+        </select>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <select  class="form-control" (change)="onGenderChange($event.target.value)">
-      <option value="allGenders" selected="selected">Gender</option>
-      <option value="female">Women</option>
-      <option value="male">Men</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <select  class="form-control" (change)="onColorChange($event.target.value)">
-      <option value="allColors" selected="selected">Color</option>
-      <option value="black">Black</option>
-      <option value="white">White</option>
-      <option value="blue">Blue</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <select  class="form-control" (change)="onPriceChange($event.target.value)">
-      <option value="allColors" selected="selected">Price</option>
-      <option value="under50">Under $50</option>
-      <option value="under100">Under $100</option>
-      <option value="over100">$100+</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <select  class="form-control" (change)="onClothingChange($event.target.value)">
-      <option value="allClothing" selected="selected">Type</option>
-      <option value="pants">Pants</option>
-      <option value="jacket">Jackets</option>
-      <option value="shoes">Shoes</option>
-      <option value="outer">Outers</option>
-      <option value="accessories">Accessories</option>
-    </select>
-  </div>
-<div class="form-inline">
+</div>
 <div class="row product-list">
-  <div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="col-sm-6
-  " (click)="goToDetailPage(product)">
+  <div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="col-md-6 item" (click)="goToDetailPage(product)">
     <div class="panel panel-default">
       <div class="panel-body">
-        <div class="col-sm-5">
+        <div class="col-md-5">
           <img src="{{product.imageUrl}}"/>
         </div>
-        <div class="col-sm-7">
+        <div class="col-xs-12 col-md-7">
           <h2>{{product.name}}</h2>
           <h4>${{product.price}}</h4>
           <h3>Description</h3>
