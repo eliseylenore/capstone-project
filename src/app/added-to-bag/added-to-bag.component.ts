@@ -27,8 +27,8 @@ export class AddedToBagComponent {
     description: string,
     imageUrl: string) {
       var newItem = new Product(name, gender, clothing, price, size, color, description, imageUrl);
-      var newCart = new Cart([newItem]);
-      console.log("total price: $" + newCart.totalPrice);
+      //var newCart = new Cart([newItem]);
+      //console.log("total price: $" + newCart.totalPrice);
       this.productService.addItemToCart(newItem);
       //this.productService.addCart(newCart);
   }
