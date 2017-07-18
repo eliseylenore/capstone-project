@@ -1,11 +1,11 @@
 # Capstone Project: Dress To Impress
-### By **Jiwon Kang & Elise St Hilaire**
+### By **Elise St Hilaire**
 
 ## Online store for fabulous job seekers, 05/15/2017
 ![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)
 
 ### Description
-_As job seekers ourselves, we know that looking for a fulltime job is not for the faint of heart. Even the smallest things can effect an impression. Since this is the case, we decided to open an online store that helps job seekers find professional-looking, worry-free clothing._
+_As job seekers ourselves, we know that looking for a full-time job is not for the faint of heart. Even the smallest things can effect an impression. Since this is the case, we decided to open an online store that helps job seekers find professional-looking, worry-free clothing._
 
 _Our site features interview-worthy clothing for men and women of all ages. We have utilized the Stripe API, which allowed us to easily incorporate payments._
 
