@@ -1,3 +1,6 @@
+/**************
+Styles from this page have been imported to product-detail
+**************/
 h2 {
   font-weight: normal;
   font-size: 24px;
@@ -50,7 +53,44 @@ a:hover {
     margin: 20px 0;
   }
 }
+.business-header {
+  height: 600px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url('/assets/img/professional.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.space {
+  height: 200px;
+}
+.big-space {
+  height: 320px;
+}
 
+/********* Fonts *******/
+.banner-title {
+  color: white;
+  font-size: 72px;
+}
+.paragraph-text {
+  line-height: 25px;
+}
+.big-text {
+  font-size: 25px;
+}
+
+/**************
+Media Queries
+**************/
 @media (min-width: 992px) {
   .product-list {
     flex-direction: row;
