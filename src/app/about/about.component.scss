@@ -1,19 +1,32 @@
 .business-header {
-    height: 300px;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    background: url('/assets/img/two-profs.jpeg') center center no-repeat scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  height: 300px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url('/assets/img/office.jpeg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 .space {
   height: 100px;
 }
-
+.big-space {
+  height: 320px;
+}
 .banner-title {
   color: white;
   font-size: 72px;
+}
+.paragraph-text {
+  line-height: 25px;
+}
+.big-text {
+  font-size: 25px;
 }
