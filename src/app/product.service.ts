@@ -37,6 +37,8 @@ export class ProductService {
         limitToLast: 1
       }
     })
+    //instead of subscribing, make the cart so that there is only one cart in the node.
+    //all checked out carts will go to a checkedOutCarts node
     const promise = lastCart.subscribe((result) => {
       if(result[0].checkedOut) {
         console.log("already checked out")
