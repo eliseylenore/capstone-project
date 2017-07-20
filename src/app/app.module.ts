@@ -10,6 +10,7 @@ import { routing } from './app.routing';
 import { ProductsComponent } from './products/products.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SizePipe } from './size.pipe';
 import { GenderPipe } from './gender.pipe';
@@ -46,7 +47,8 @@ export const firebaseConfig = {
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig, 'capstone-project'),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
