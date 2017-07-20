@@ -8,7 +8,8 @@
       <li><a class="cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
       <li><a routerLink="">Products</a></li>
       <li><a routerLink="about">About</a></li>
-      <li><a routerLink="authentication">Sign In</a></li>
+      <li *ngIf="isLoggedIn"><a>{{userName}}</a><a (click)="logout()">Logout</a></li>
+      <li *ngIf="!isLoggedIn"><a (click)="login()">Sign In</a></li>
     </ul>
 
   </div>

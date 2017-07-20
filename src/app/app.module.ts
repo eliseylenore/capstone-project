@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,6 +21,7 @@ import { ClothingPipe } from './clothing.pipe';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddedToBagComponent } from './added-to-bag/added-to-bag.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -50,7 +52,8 @@ export const firebaseConfig = {
     routing,
     AngularFireModule.initializeApp(firebaseConfig, 'capstone-project'),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
