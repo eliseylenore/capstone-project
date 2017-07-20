@@ -31,6 +31,10 @@
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: white;
 }
+.navbar-default .menu {
+  font-size: 14px;
+  float: right;
+}
 .cart {
   font-size: 20px;
   padding-top: 12px;
@@ -46,4 +50,13 @@
 .cart-container {
   display: flex;
   align-items: center;
+}
+
+/**************
+Media Queries
+**************/
+@media (min-width: 692px) {
+  .menu {
+    display: none;
+  }
 }
