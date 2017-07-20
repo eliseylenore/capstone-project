@@ -28,6 +28,13 @@ h5 {
     border-radius: 0;
   }
 }
+.panel-body {
+  padding: 0;
+}
+.col-sm-6.item, .col-xs-5 {
+  padding-right: 0;
+  padding-left: 0;
+}
 a:hover {
   cursor: pointer;
   text-decoration: none;
@@ -42,10 +49,10 @@ a:hover {
     background-repeat:   no-repeat;
     background-size:     cover;
   }
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: stretch;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  // align-items: stretch;
   .panel {
     height: 100%;
   }
@@ -94,5 +101,15 @@ Media Queries
 @media (min-width: 992px) {
   .product-list {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 400px) {
+  .panel-body {
+    padding:15px
+  }
+  .col-sm-6.item, .col-xs-5.item {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
