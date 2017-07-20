@@ -16,6 +16,7 @@ export class DashboardComponent {
   innerHeight: any;
   innerWidth: any;
   isWideEnough: Boolean;
+  showMenu: Boolean;
 
   constructor(public authService: AuthenticationService, private router: Router, private http: Http) {
     this.authService.user.subscribe(user => {
@@ -29,6 +30,16 @@ export class DashboardComponent {
       this.innerWidth = (window.screen.width) + "px";
       this.isWideEnough = innerWidth > 691;
     });
+  }
+
+  onResize(event) {
+    this.innerWidth = (event.target.innerWidth) + "px"
+    this.isWideEnough = innerWidth > 691
+    console.log(this.innerWidth)
+  }
+
+  consoleLogSomething() {
+    console.log(this.showMenu || this.isWideEnough);
   }
 
   login() {
