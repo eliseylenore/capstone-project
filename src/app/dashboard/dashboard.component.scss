@@ -5,7 +5,7 @@
 .navbar-default {
     color: #ccc;
     border-radius: 0;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px;
       top:0px;
       left:0px;
@@ -32,6 +32,18 @@
   color: white;
 }
 .cart {
-  font-size: 24px;
+  font-size: 20px;
   padding-top: 12px;
+  padding-right: 0;
+  display: inline-block;
+}
+.navbar-default .navbar-nav > li > a.user {
+  display: inline-block;
+  padding-left: 5px;
+  font-size: 14px;
+  color: pink;
+}
+.cart-container {
+  display: flex;
+  align-items: center;
 }
