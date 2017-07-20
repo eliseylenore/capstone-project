@@ -1,5 +1,5 @@
 .business-header {
-  height: 300px;
+  height: calc(100vh - 70px);
   position: absolute;
   left: 0px;
   right: 0px;
@@ -14,21 +14,29 @@
   background-size: cover;
   -o-background-size: cover;
 }
-.space {
-  height: 100px;
+.space, .big-space {
+  height: 25px;
 }
-.big-space {
-  height: 320px;
-}
+
 
 /********* Fonts *******/
 .banner-title {
   color: white;
-  font-size: 72px;
+  font-size: 50px;
 }
 .paragraph-text {
+  color: white;
   line-height: 25px;
+  padding: 20px;
 }
 .big-text {
   font-size: 25px;
+}
+
+/********* Media Queries *******/
+@media (min-width: 991px) {
+  .paragraph-text {
+    padding: 20px 50px;
+    margin: 0px 75px;
+  }
 }
