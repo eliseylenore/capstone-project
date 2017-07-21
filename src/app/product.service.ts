@@ -5,6 +5,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable,
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import * as Rx from 'rxjs';
 import { Observable } from 'rxjs/Observable';
+import * as Firebase from "firebase";
 
 @Injectable()
 export class ProductService {
@@ -12,7 +13,8 @@ export class ProductService {
   items: FirebaseListObservable<any[]>;
   carts: FirebaseListObservable<any[]>;
   chosenCartItems: FirebaseListObservable<any[]>;
-  constructor(private angularFire: AngularFireDatabaseModule, private database: AngularFireDatabase) {
+
+  constructor(private database: AngularFireDatabase) {
     this.products = database.list('products');
     this.items = database.list('items');
     this.carts = database.list('carts');
@@ -30,27 +32,11 @@ export class ProductService {
   //   this.carts.push(newCart);
   // }
 
-  addItemToCart(newItem) {
+  addItemToCart(newItem, userId) {
     var cartId;
-    let lastCart = this.database.list('/carts', {
-      query: {
-        limitToLast: 1
-      }
-    })
-    //instead of subscribing, make the cart so that there is only one cart in the node.
-    //all checked out carts will go to a checkedOutCarts node
-    const promise = lastCart.subscribe((result) => {
-      if(result[0].checkedOut) {
-        console.log("already checked out")
-      } else {
-        cartId = result[0].$key;
-        console.log('cart id: ' + cartId);
-        // this.chosenCartItems = this.database.list('carts/' + this.cartId + '/items');
-        // console.log('chosenCartItems ' + JSON.stringify(this.chosenCartItems));
-        // this.chosenCartItems.push(newItem);
-
-      }
-    });
+    var thisCart: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart');
+    var cartItems: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');
+    cartItems.push(newItem);
   }
 
 
