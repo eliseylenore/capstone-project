@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  providers: [AuthenticationService]
 })
 export class DashboardComponent {
   user;
@@ -20,6 +21,7 @@ export class DashboardComponent {
 
   constructor(public authService: AuthenticationService, private router: Router, private http: Http) {
     this.authService.user.subscribe(user => {
+      console.log(user.uid);
       if(user === null) {
         this.isLoggedIn = false;
       } else {

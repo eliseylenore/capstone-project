@@ -1,7 +1,8 @@
 import { Product } from './product.model';
 
 export class Cart {
-	public totalPrice: number
+	public totalPrice: number;
+
 	constructor (
     public products: Product[],
   	) {
