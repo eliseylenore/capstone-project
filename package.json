@@ -47,7 +47,7 @@
     "typescript": "~2.2.0"
   },
   "description": "![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)",
-  "main": "karma.conf.js",
+  "main": "src/app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jiwonk42/capstone-project.git"

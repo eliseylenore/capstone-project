@@ -6,3 +6,8 @@ export var masterFirebaseConfig = {
   storageBucket: "capstone-project-9ac28.appspot.com",
   messagingSenderId: "484877719"
 }
+
+export var masterStripeConfig = {
+  PUBLISHABLE_KEY: "pk_test_O13VvsWUjRzTeq5SJhzKEAUT",
+  SECRET_KEY: "sk_test_riyfMNbWBBGftbLXKdxfw2BB"
+}
