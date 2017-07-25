@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { masterStripeConfig } from '../api-keys';
 // import {Headers, Http, Response,RequestOptions} from '@angular/http';
 
 @Component({

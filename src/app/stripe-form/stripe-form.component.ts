@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { masterStripeConfig } from '../api-keys';
 
 @Component({
   moduleId: module.id,
@@ -7,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stripe-form.component.scss'],
 })
 export class StripeFormComponent {
-
   openCheckout() {
     var handler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_O13VvsWUjRzTeq5SJhzKEAUT',
+      key: masterStripeConfig.PUBLISHABLE_KEY,
       locale: 'auto',
       token: function (token: any) {
       }
