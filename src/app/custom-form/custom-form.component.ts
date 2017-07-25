@@ -28,7 +28,7 @@ export class CustomFormComponent {
       cvc: this.cvc
     }, (status: number, response: any) => {
       if (status === 200) {
-        this.message = 'Success! Card token ${response.card.id}.';
+        this.message = 'Success! Card token' + response.card.id + '.';
         console.log(this.message);
       } else {
         this.message = response.error.message;

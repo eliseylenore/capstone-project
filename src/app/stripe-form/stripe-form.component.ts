@@ -10,7 +10,7 @@ export class StripeFormComponent {
 
   openCheckout() {
     var handler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_013VvsWUjRzTeq5SJhzKEAUT',
+      key: 'pk_test_O13VvsWUjRzTeq5SJhzKEAUT',
       locale: 'auto',
       token: function (token: any) {
       }

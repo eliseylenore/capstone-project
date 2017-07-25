@@ -21,7 +21,7 @@ export class DashboardComponent {
 
   constructor(public authService: AuthenticationService, private router: Router, private http: Http) {
     this.authService.user.subscribe(user => {
-      console.log(user.uid);
+      console.log(user);
       if(user === null) {
         this.isLoggedIn = false;
       } else {
