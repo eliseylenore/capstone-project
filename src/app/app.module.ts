@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { AuthGuardService } from './auth-guard.service';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -23,6 +24,9 @@ import { ClothingPipe } from './clothing.pipe';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddedToBagComponent } from './added-to-bag/added-to-bag.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { StripeFormComponent } from './stripe-form/stripe-form.component';
+import { CustomFormComponent } from './custom-form/custom-form.component';
+
 
 
 export const firebaseConfig = {
@@ -47,7 +51,9 @@ firebase.initializeApp(firebaseConfig);
     ClothingPipe,
     ProductDetailComponent,
     AddedToBagComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    StripeFormComponent,
+    CustomFormComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,8 @@ firebase.initializeApp(firebaseConfig);
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
