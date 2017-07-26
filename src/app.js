@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 //get route displays the payment form
 app.get("/", (req, res) =>
-  res.render("index.pug", {keyPublishable}));
+  res.render("index.html", {keyPublishable}));
 
 //post route receives the payment token and creates the charge
 app.post("/charge", (req, res) => {

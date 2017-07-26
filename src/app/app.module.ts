@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { AuthGuardService } from './auth-guard.service';
 import { ReactiveFormsModule } from '@angular/forms'
@@ -59,6 +60,7 @@ firebase.initializeApp(firebaseConfig);
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,

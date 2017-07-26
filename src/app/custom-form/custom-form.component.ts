@@ -12,7 +12,6 @@ import { masterStripeConfig } from '../api-keys';
 })
 
 export class CustomFormComponent {
-
   cardNumber: string;
   expiryMonth: string;
   expiryYear: string;

@@ -12,6 +12,7 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
   styleUrls: ['./product-detail.component.scss'],
   providers: [ ProductService, AuthenticationService ]
 })
+
 export class ProductDetailComponent implements OnInit {
   productId: string;
   productToDisplay;

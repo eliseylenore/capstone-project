@@ -25,7 +25,7 @@ const appRoutes: Routes = [
     component: AuthenticationComponent
   },
   {
-    path: 'stripe',
+    path: 'stripe/:id',
     component: StripeFormComponent
   },
   {

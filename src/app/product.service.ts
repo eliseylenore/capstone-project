@@ -24,19 +24,15 @@ export class ProductService {
     return this.products;
   }
 
-  // addItem(newItem: Product) {
-  //   this.items.push(newItem);
-  // }
-  //
-  // addCart(newCart: Cart) {
-  //   this.carts.push(newCart);
-  // }
-
   addItemToCart(newItem, userId) {
-    var cartId;
     var thisCart: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart');
     var cartItems: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');
     cartItems.push(newItem);
+  }
+
+  getItemsInCart(userId) {
+    var cartItems: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');
+    return cartItems;
   }
 
 

@@ -18,6 +18,7 @@ export class DashboardComponent {
   innerWidth: any;
   isWideEnough: Boolean;
   showMenu: Boolean;
+  userId: String;
 
   constructor(public authService: AuthenticationService, private router: Router, private http: Http) {
     this.authService.user.subscribe(user => {
@@ -42,6 +43,20 @@ export class DashboardComponent {
 
   consoleLogSomething() {
     console.log(this.showMenu || this.isWideEnough);
+  }
+
+  checkout() {
+    this.authService.user.subscribe(user => {
+      if(user === null) {
+        alert("Please sign in so you can view cart")
+      } else {
+        this.userId = user.uid;
+      }
+      this.innerHeight = (window.screen.height) + "px";
+      this.innerWidth = (window.screen.width) + "px";
+      this.isWideEnough = innerWidth > 691;
+    }
+    this.router.navigate(['stripe', this.user.id]);
   }
 
   login() {
