@@ -30,8 +30,8 @@ export class ProductService {
     cartItems.push(newItem);
   }
 
-  getCartPrice(userId) {
-    var currentCart: FirebaseObjectObservable<any> = this.database.object('/allCarts/' + userId + '/currentCart');
+  getCurrentCart(userId) {
+    var currentCart: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');
     return currentCart;
   }
 

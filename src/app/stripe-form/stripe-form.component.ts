@@ -19,8 +19,8 @@ import { Router } from '@angular/router';
 export class StripeFormComponent implements OnInit {
   public isLoggedIn: Boolean;
   private userId: String;
-  public cartPrice: number;
-  private currentCart: FirebaseObjectObservable<any>;
+  public cartPrice: number = 0;
+  private currentCart: FirebaseListObservable<any>;
 
   constructor(
     private http: HttpClient,
@@ -43,15 +43,21 @@ export class StripeFormComponent implements OnInit {
   productsInCart: FirebaseListObservable<any[]>;
 
   ngOnInit() {
+    var vm = this;
     this.route.params.forEach((urlParameters) => {
       this.userId = urlParameters['id'];
     })
     this.productsInCart = this.productService.getItemsInCart(this.userId);
-    this.currentCart = this.productService.getCartPrice(this.userId);
+    this.currentCart = this.productService.getCurrentCart(this.userId);
     this.currentCart.subscribe(cart => {
-      this.cartPrice = cart.totalPrice;
+      console.log("subscribing!");
+      cart.forEach(function(item) {
+        vm.cartPrice += parseInt(item.price);
+        console.log("this.cartPrice: " + item.price);
+      })
+      console.log("totalPrice: " + vm.cartPrice)
     });
-    console.log("totalPrice: " + this.cartPrice)
+
   }
 
   goToDetailPage(clickedProductKey) {
@@ -70,11 +76,12 @@ export class StripeFormComponent implements OnInit {
       }
     });
 
+    var vm = this;
     document.getElementById('customButton').addEventListener('click', function(e) {
       handler.open({
-        name: 'Dressed for Success',
-        description: '2 widgets',
-        amount: 2000,
+        name: 'Total Price: $' + vm.cartPrice,
+        description: 'Total Price: $' + vm.cartPrice,
+        amount: vm.cartPrice * 100,
         zipCode: 'true'
       });
       e.preventDefault();

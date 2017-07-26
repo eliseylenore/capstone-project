@@ -1,4 +1,4 @@
-<h1>Your Cart</h1>
+<h1>Order Summary</h1>
 <h2>Total Price: ${{cartPrice}}</h2>
 
 <div class="row product-list">
@@ -15,9 +15,11 @@
           <h4>${{product.price}}</h4>
           <h3>Description</h3>
           <p>{{product.description}}</p>
+          <a>Edit</a>
+          <a>Delete</a>
         </div>
       </div>
     </div>
   </div>
 </div>
-<button id="customButton"(click)="openCheckout()">Purchase</button>
+<button class="btn btn-default" id="customButton"(click)="openCheckout()">Purchase</button>
