@@ -5,7 +5,7 @@ import { ProductService } from '../product.service';
 import { Component, OnInit } from '@angular/core';
 import { masterStripeConfig } from '../api-keys';
 import { HttpClient } from '@angular/common/http';
-import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +19,8 @@ import { Router } from '@angular/router';
 export class StripeFormComponent implements OnInit {
   public isLoggedIn: Boolean;
   private userId: String;
+  public cartPrice: number;
+  private currentCart: FirebaseObjectObservable<any>;
 
   constructor(
     private http: HttpClient,
@@ -44,8 +46,12 @@ export class StripeFormComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.userId = urlParameters['id'];
     })
-    console.log("User id: " + this.userId)
     this.productsInCart = this.productService.getItemsInCart(this.userId);
+    this.currentCart = this.productService.getCartPrice(this.userId);
+    this.currentCart.subscribe(cart => {
+      this.cartPrice = cart.totalPrice;
+    });
+    console.log("totalPrice: " + this.cartPrice)
   }
 
   goToDetailPage(clickedProductKey) {

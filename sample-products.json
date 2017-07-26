@@ -71,6 +71,7 @@
       "EaAvpa7AYENXeumUv4licu2wsOw2":{
       "currentCart": {
         "id": 33,
+        "totalPrice": 70,
         "items": [{
           "name": "Super Duper Pantelones",
           "gender": "Male",
@@ -86,6 +87,7 @@
     },
         "pastCarts":{
           "id": 0,
+          "totalPrice": 120,
           "items": [{
             "name": "Super Duper Pantelones",
             "gender": "Male",

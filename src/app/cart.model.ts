@@ -1,15 +1,14 @@
 import { Product } from './product.model';
 
 export class Cart {
-	public totalPrice: number;
+	public totalPrice: number = this.products.reduce((price: number, product) => {
+		let productPrice = Number(product.price);
+		return price + productPrice;
+	}, 0)
 
 	constructor (
     public products: Product[],
   	) {
-			this.totalPrice = this.products.reduce((price: number, product) => {
-				let productPrice = Number(product.price);
-				return price + productPrice;
-			}, 0)
 			// this.totalPrice = this.determineTotalPrice(this.products);
 		}
 
