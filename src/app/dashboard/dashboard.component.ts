@@ -27,6 +27,7 @@ export class DashboardComponent {
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;
+        this.userId = user.uid;
         this.userName = user.displayName;
       }
       this.innerHeight = (window.screen.height) + "px";
@@ -52,11 +53,8 @@ export class DashboardComponent {
       } else {
         this.userId = user.uid;
       }
-      this.innerHeight = (window.screen.height) + "px";
-      this.innerWidth = (window.screen.width) + "px";
-      this.isWideEnough = innerWidth > 691;
-    }
-    this.router.navigate(['stripe', this.user.id]);
+      this.router.navigate(['stripe', this.userId]);
+    });
   }
 
   login() {
