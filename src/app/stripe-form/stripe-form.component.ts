@@ -48,8 +48,8 @@ export class StripeFormComponent implements OnInit {
     this.productsInCart = this.productService.getItemsInCart(this.userId);
   }
 
-  goToDetailPage(clickedProduct) {
-    this.router.navigate(['products', clickedProduct.$key]);
+  goToDetailPage(clickedProductKey) {
+    this.router.navigate(['products', clickedProductKey]);
   };
 
   openCheckout() {

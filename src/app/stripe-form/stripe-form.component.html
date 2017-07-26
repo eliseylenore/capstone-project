@@ -1,7 +1,7 @@
 <h1>Your Cart</h1>
 
 <div class="row product-list">
-  <div *ngFor="let product of productsInCart | async" class="col-sm-6 item" (click)="goToDetailPage(product)">
+  <div *ngFor="let product of productsInCart | async" class="col-sm-6 item" (click)="goToDetailPage(product.id)">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-xs-5">

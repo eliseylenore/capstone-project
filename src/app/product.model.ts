@@ -1,4 +1,5 @@
 export class Product {
+  public id: String;
   public quantity: number;
   constructor (
     public name: string,

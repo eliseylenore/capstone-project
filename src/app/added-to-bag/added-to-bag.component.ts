@@ -30,6 +30,7 @@ export class AddedToBagComponent {
   showAlert: boolean = false;
 
   newItem(
+    id: string,
     name: string,
     gender: string,
     clothing: string,
@@ -39,6 +40,7 @@ export class AddedToBagComponent {
     description: string,
     imageUrl: string) {
       var newItem = new Product(name, gender, clothing, price, size, color, description, imageUrl);
+      newItem.id = id;
       //var newCart = new Cart([newItem]);
       //console.log("total price: $" + newCart.totalPrice);
       this.productService.addItemToCart(newItem, this.userId);

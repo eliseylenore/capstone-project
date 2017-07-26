@@ -1,3 +1,5 @@
+<input #id style="display: none" type="text" value="{{(productToDisplay | async)?.$key }}">
+<pre>{{(productToDisplay | async)?.$key }}</pre>
 <input #name style="display: none" type="text" value="{{(productToDisplay | async)?.name }}">
 <input #gender style="display: none" type="text" value="{{(productToDisplay | async)?.gender }}">
 <input #clothing style="display: none" type="text" value="{{(productToDisplay | async)?.clothing }}">
@@ -6,7 +8,7 @@
 <input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
 <input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
 <input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
-<button (click)="showAlert=true; newItem(name.value, gender.value, clothing.value, price.value, size.value, color.value, description.value, imageUrl.value)" class="btn btn-default" *ngIf="!showAlert">Add to cart!</button>
+<button (click)="showAlert=true; newItem(id.value, name.value, gender.value, clothing.value, price.value, size.value, color.value, description.value, imageUrl.value)" class="btn btn-default" *ngIf="!showAlert">Add to cart!</button>
 <div *ngIf="showAlert">
 <p class="red">
   You've added {{(productToDisplay | async)?.name}} to your bag :)
