@@ -20,6 +20,8 @@ export class StripeFormComponent implements OnInit {
   public isLoggedIn: Boolean;
   private userId: String;
   public cartPrice: number = 0;
+  public cartCost: number = 0;
+  public cartTax: number = 0;
   private currentCart: FirebaseListObservable<any>;
 
   constructor(
@@ -53,10 +55,14 @@ export class StripeFormComponent implements OnInit {
       console.log("subscribing!");
       cart.forEach(function(item) {
         vm.cartPrice += parseInt(item.price);
-        console.log("this.cartPrice: " + item.price);
-      })
-      console.log("totalPrice: " + vm.cartPrice)
+      });
+      console.log("this.cartPrice: " + vm.cartPrice);
+      vm.cartTax = vm.cartPrice * 0.098;
+      vm.cartCost = vm.cartPrice + this.cartTax;
+      console.log("totalPrice: " + vm.cartPrice + " tax: " + vm.cartTax + ", cost: " + vm.cartCost)
     });
+
+
 
   }
 
@@ -79,9 +85,9 @@ export class StripeFormComponent implements OnInit {
     var vm = this;
     document.getElementById('customButton').addEventListener('click', function(e) {
       handler.open({
-        name: 'Total Price: $' + vm.cartPrice,
-        description: 'Total Price: $' + vm.cartPrice,
-        amount: vm.cartPrice * 100,
+        name: 'Total Cost: $' + vm.cartCost,
+        description: 'Price: $' + vm.cartCost + ' + Sales Tax: $' + vm.cartTax,
+        amount: vm.cartCost * 100,
         zipCode: 'true'
       });
       e.preventDefault();
