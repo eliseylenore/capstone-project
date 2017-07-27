@@ -29,11 +29,8 @@ export class ProductService {
     let cartItems = this.database.list('/allCarts/'+ userId + '/currentCart/items');
     let thisItem = cartItems.subscribe(
       items => {
-        console.log("productKey: " + productKey);
         items.forEach(function(item) {
-          console.log("item.id: " + item.id);
           if (item.id == productKey) {
-            console.log("match!");
             cartItem = item;
           }
       });

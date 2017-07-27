@@ -1,19 +1,24 @@
-<button *ngIf="!editing" (click)="editing=true" type="button" class="btn btn-sm btn-default red">Edit</button>
-<div *ngIf="editing">
+<p class="red" *ngIf="doneEditing">You just successfully edited {{item.name}}. Good job!</p>
+<button *ngIf="!editing" (click)="editing=true; doneEditing=false" type="button" class="btn btn-sm btn-default red">Edit</button>
+<div class="form-inline" *ngIf="editing">
   <h1>Edit {{item.name}}</h1>
-  <label>Size: {{item.size}}</label>
-  <select type="select" [(ngModel)]="item.size">
-    <option value="Small">Small</option>
-    <option value="Medium">Medium</option>
-    <option value="Large">Large</option>
-    <option value="Xlarge">Extra Large</option>
-  </select>
-  <label>Quantity</label>
-  <select type="select" [(ngModel)]="item.quantity">
-    <option [ngValue]="1">1</option>
-    <option [ngValue]="2">2</option>
-    <option [ngValue]="3">3</option>
-    <option [ngValue]="4">4</option>
-  </select>
-  <button (click)="beginEditingItem(item); editing=false" type="button" class="btn btn-sm btn-default red">Edit</button>
+  <label>Size</label>
+  <div class="form-group">
+    <select class="form-control" type="select" [(ngModel)]="item.size">
+      <option value="Small">Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="Xlarge">Extra Large</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Quantity</label>
+    <select class="form-control" type="select" [(ngModel)]="item.quantity">
+      <option [ngValue]="1">1</option>
+      <option [ngValue]="2">2</option>
+      <option [ngValue]="3">3</option>
+      <option [ngValue]="4">4</option>
+    </select>
+  </div>
+  <button (click)="beginEditingItem(item); doneEditing=true; editing=false" type="button" class="btn btn-sm btn-default red">Edit</button>
 </div>

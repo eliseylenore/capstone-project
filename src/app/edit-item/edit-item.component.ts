@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { ProductService } from '../product.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-item',
@@ -19,6 +19,7 @@ export class EditItemComponent implements OnInit {
     public authService: AuthenticationService,
     private productService: ProductService,
     private route: ActivatedRoute,
+    private router: Router
   ) {
     this.authService.user.subscribe(user => {
       if(user === null) {

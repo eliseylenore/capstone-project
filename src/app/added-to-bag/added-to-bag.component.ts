@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+import { ActivatedRoute, Params, Route } from '@angular/router';
 import { Product } from './../product.model';
 import { Cart } from './../cart.model';
 import { ProductService } from '../product.service';
@@ -25,10 +26,13 @@ export class AddedToBagComponent implements OnInit{
   constructor(
     public authService: AuthenticationService,
     private route: ActivatedRoute,
-    private productService: ProductService) {
+    private productService: ProductService,
+    private location: Location
+  ) {
     }
 
     ngOnInit() {
+      console.log("location " + this.location.path().split('/')[0]);
       this.route.params.forEach((urlParameters) => {
         this.productId = urlParameters['id'];
       });

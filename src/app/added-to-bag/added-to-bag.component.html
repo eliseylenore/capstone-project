@@ -1,10 +1,14 @@
-<div *ngIf="!showAlert">
-  <select type="select" #quantity>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
+
+<div *ngIf="!showAlert" class="form-inline">
+  <div class="form-group">
+    <label>Quantity</label>
+    <select type="select" class="form-control" #quantity>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
   <input #id style="display: none" type="text" value="{{(productToDisplay | async)?.$key }}">
   <input #totalPrice style="display: none" type="text" value="{{(productToDisplay | async)?.totalPrice }}">
   <input #name style="display: none" type="text" value="{{(productToDisplay | async)?.name }}">
@@ -12,12 +16,15 @@
   <input #clothing style="display: none" type="text" value="{{(productToDisplay | async)?.clothing }}">
   <input #price style="display: none" type="text" value="{{(productToDisplay | async)?.price }}">
   <!-- <input #productSize style="display: none" type="text" value="{{(productToDisplay | async)?.size }}"> -->
-  <select type="select" #productSize name="productSize">
-    <option value="small">Small</option>
-    <option value="medium">Medium</option>
-    <option value="large">Large</option>
-    <option value="xlarge">Extra Large</option>
-  </select>
+  <div class="form-group">
+    <label>Size</label>
+    <select class="form-control" type="select" #productSize name="productSize">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+      <option value="xlarge">Extra Large</option>
+    </select>
+  </div>
   <input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
   <input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
   <input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
