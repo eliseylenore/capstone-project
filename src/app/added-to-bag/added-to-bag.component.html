@@ -1,4 +1,10 @@
 <div *ngIf="!showAlert">
+  <select type="select" #quantity>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
   <input #id style="display: none" type="text" value="{{(productToDisplay | async)?.$key }}">
   <input #totalPrice style="display: none" type="text" value="{{(productToDisplay | async)?.totalPrice }}">
   <input #name style="display: none" type="text" value="{{(productToDisplay | async)?.name }}">
@@ -15,7 +21,7 @@
   <input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
   <input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
   <input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
-  <button (click)="showAlert=true; newItem(id.value, name.value, gender.value, clothing.value, price.value, productSize.value, color.value, description.value, imageUrl.value); setData(productSize.value)" class="btn btn-default">Add to cart!</button>
+  <button (click)="showAlert=true; newItem(quantity.value, id.value, name.value, gender.value, clothing.value, price.value, productSize.value, color.value, description.value, imageUrl.value); setData(productSize.value)" class="btn btn-default">Add to cart!</button>
 <div>
 <div *ngIf="showAlert">
   <p class="red">

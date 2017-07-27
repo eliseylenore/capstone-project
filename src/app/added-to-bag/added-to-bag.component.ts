@@ -59,6 +59,7 @@ export class AddedToBagComponent implements OnInit{
     console.log("Size value: " + value);
   }
   newItem(
+    quantity: string,
     id: string,
     name: string,
     gender: string,
@@ -70,6 +71,7 @@ export class AddedToBagComponent implements OnInit{
     imageUrl: string) {
       var newItem = new Product(name, gender, clothing, price, size, color, description, imageUrl);
       newItem.id = id;
+      newItem.quantity = parseInt(quantity);
       //var newCart = new Cart([newItem]);
       //console.log("total price: $" + newCart.totalPrice);
       this.productService.addItemToCart(newItem, this.userId);
