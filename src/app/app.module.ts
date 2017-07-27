@@ -27,6 +27,7 @@ import { AddedToBagComponent } from './added-to-bag/added-to-bag.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { StripeFormComponent } from './stripe-form/stripe-form.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
+import { EditItemComponent } from './edit-item/edit-item.component';
 
 
 
@@ -54,7 +55,8 @@ firebase.initializeApp(firebaseConfig);
     AddedToBagComponent,
     AuthenticationComponent,
     StripeFormComponent,
-    CustomFormComponent
+    CustomFormComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

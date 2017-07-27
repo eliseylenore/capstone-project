@@ -47,7 +47,7 @@ export var masterStripeConfig = {
 ### Serve
 Run the following command to run the app:
 ```sh
-$ ng serve
+$ ng start
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.

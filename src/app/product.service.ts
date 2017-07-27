@@ -24,6 +24,36 @@ export class ProductService {
     return this.products;
   }
 
+  getCartItem(productKey, userId) {
+    let cartItem;
+    let cartItems = this.database.list('/allCarts/'+ userId + '/currentCart/items');
+    let thisItem = cartItems.subscribe(
+      items => {
+        console.log("productKey: " + productKey);
+        items.forEach(function(item) {
+          console.log("item.id: " + item.id);
+          if (item.id == productKey) {
+            console.log("match!");
+            cartItem = item;
+          }
+      });
+    });
+    return cartItem;
+  }
+
+  getItemById(itemId: string, userId: string){
+    return this.database.object('/allCarts/' + userId + '/currentCart/items/' + itemId);
+  }
+
+
+  editItem(localUpdatedItem, userId) {
+    var itemInFirebase = this.getItemById(localUpdatedItem.$key, userId);
+    itemInFirebase.update({
+      quantity: localUpdatedItem.quantity,
+      size: localUpdatedItem.size
+    });
+  }
+
   addItemToCart(newItem, userId) {
     var thisCart: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart');
     var cartItems: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');
@@ -39,7 +69,6 @@ export class ProductService {
     var cartItems: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');
     return cartItems;
   }
-
 
   getProductById(productId: string) {
     return this.database.object('products/' + productId);

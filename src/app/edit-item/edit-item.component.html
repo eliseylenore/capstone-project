@@ -1,0 +1,11 @@
+<button *ngIf="!editing" (click)="editing=true" type="button" class="btn btn-sm btn-default red">Edit</button>
+<div *ngIf="editing">
+  <h1>Edit {{item.name}}</h1>
+  <select type="select" [(ngModel)]="item.quantity">
+    <option [ngValue]="1">1</option>
+    <option [ngValue]="2">2</option>
+    <option [ngValue]="3">3</option>
+    <option [ngValue]="4">4</option>
+  </select>
+  <button (click)="beginEditingItem(item)" type="button" class="btn btn-sm btn-default red">Edit</button>
+</div>

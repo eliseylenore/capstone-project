@@ -22,13 +22,13 @@
   <input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
   <input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
   <button (click)="showAlert=true; newItem(quantity.value, id.value, name.value, gender.value, clothing.value, price.value, productSize.value, color.value, description.value, imageUrl.value); setData(productSize.value)" class="btn btn-default">Add to cart!</button>
-<div>
+</div>
 <div *ngIf="showAlert">
   <p class="red">
     You've added {{(productToDisplay | async)?.name}} to your bag :)
   </p>
-    <div class="btn-group">
-      <button type="button" class="btn btn-sm btn-default red">Edit</button>
-      <button type="button" class="btn btn-sm btn-default red" (click)="showAlert=false">Remove</button>
-    </div>
+  <div class="btn-group">
+    <app-edit-item [userId]="userId"></app-edit-item>
+    <button type="button" class="btn btn-sm btn-default red" (click)="showAlert=false">Remove</button>
+  </div>
 </div>
