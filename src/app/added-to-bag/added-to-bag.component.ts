@@ -32,12 +32,10 @@ export class AddedToBagComponent implements OnInit{
     }
 
     ngOnInit() {
-      console.log("location " + this.location.path().split('/')[0]);
       this.route.params.forEach((urlParameters) => {
         this.productId = urlParameters['id'];
       });
       var vm = this;
-      console.log("product to display: " + vm.productToDisplay)
       // this.productToDisplayFirebase = this.productService.getProductById(vm.productToDisplay);
       this.authService.user.subscribe(user => {
         if(user === null) {
@@ -47,7 +45,6 @@ export class AddedToBagComponent implements OnInit{
           this.currentCart = this.productService.getCurrentCart(vm.userId);
           this.currentCart.subscribe(cart => {
             cart.forEach(function(item) {
-              console.log("vm.productToDisplay.$key: " + vm.productId + ", item.id: " + item.id)
               if(vm.productId== item.id) {
                 console.log("show alert = true")
                 vm.showAlert = true;
@@ -60,7 +57,6 @@ export class AddedToBagComponent implements OnInit{
 
 
   setData(value) {
-    console.log("Size value: " + value);
   }
   newItem(
     quantity: string,

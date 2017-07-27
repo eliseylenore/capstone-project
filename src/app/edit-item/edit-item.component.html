@@ -1,5 +1,6 @@
 <p class="red" *ngIf="doneEditing">You just successfully edited {{item.name}}. Good job!</p>
 <button *ngIf="!editing" (click)="editing=true; doneEditing=false" type="button" class="btn btn-sm btn-default red">Edit</button>
+<button *ngIf="!deleting" type="button" class="btn btn-sm btn-default red" (click)="beginDeletingItem(item);showAlert=false;deleting=true">Remove</button>
 <div class="form-inline" *ngIf="editing">
   <h1>Edit {{item.name}}</h1>
   <label>Size</label>

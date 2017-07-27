@@ -51,6 +51,11 @@ export class ProductService {
     });
   }
 
+  deleteItem(itemToDelete, userId) {
+    var itemInFirebase = this.getItemById(itemToDelete.$key, userId);
+    itemInFirebase.remove();
+  }
+
   addItemToCart(newItem, userId) {
     var thisCart: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart');
     var cartItems: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/currentCart/items');

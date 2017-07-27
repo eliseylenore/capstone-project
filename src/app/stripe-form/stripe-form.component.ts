@@ -33,7 +33,6 @@ export class StripeFormComponent implements OnInit {
     private route: ActivatedRoute,
   ) {
     this.authService.user.subscribe(user => {
-      console.log(user.uid);
       if(user === null) {
         this.isLoggedIn = false;
       } else {
@@ -77,7 +76,6 @@ export class StripeFormComponent implements OnInit {
       token: function (token: any) {
           return this.http.post('/stripe.com/api/bootstrap?key=pk_test_O13VvsWUjRzTeq5SJhzKEAUT&locale=en-US/charge', token).subscribe(data => {
             this.results = data['results'];
-            console.log("post result!!! " + this.results);
           })
       }
     });

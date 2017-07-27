@@ -15,6 +15,9 @@ export class EditItemComponent implements OnInit {
   public isLoggedIn: Boolean;
   private item: FirebaseObjectObservable<any>;
   private productId: String;
+  public showAlert=false;
+  public deleting=false;
+  public doneDeleting=true;
   constructor(
     public authService: AuthenticationService,
     private productService: ProductService,
@@ -27,7 +30,6 @@ export class EditItemComponent implements OnInit {
       } else {
         this.isLoggedIn = true;
         this.userId = user.uid;
-        console.log("this.userId " + this.userId);
       }
     });
   }
@@ -44,4 +46,15 @@ export class EditItemComponent implements OnInit {
     var vm = this;
     this.productService.editItem(localUpdatedItem, vm.userId);
   }
+
+  beginDeletingItem(itemToDelete){
+
+    var vm = this;
+   if(confirm("Are you sure you want to delete this item from the inventory?")){
+     this.productService.deleteItem(itemToDelete, vm.userId);
+     vm.showAlert=false;
+     vm.deleting=false;
+     vm.doneDeleting=true;
+   }
+ }
 }
