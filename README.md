@@ -16,8 +16,8 @@ $ npm install
 $ bower install
 ```
 
-### Setup Firebase
-_Since our site uses a Firebase database, you'll need to acquire your own Firebase credentials._
+### Setup Firebase & Stripe
+_Since our site uses a Firebase database and uses the Stripe API, you'll need to acquire your own credentials for both._
 
 _Simply open your own account on the [Firebase website](https://firebase.google.com/)_
 
@@ -33,6 +33,15 @@ export var masterFirebaseConfig = {
     storageBucket: "xxxx.appspot.com",
     messagingSenderId: "xxxx"
 };
+```
+
+_For Stripe, just sign into your account, go to Dashboard, and click on APIs. Copy and paste them into **api-keys.ts** in the following manner:_
+
+```sh
+export var masterStripeConfig = {
+  SECRET_KEY: "xx_xxxx_xxxxxxxxxxxxxxxxx",
+  PUBLISHABLE_KEY: "xx_xxxx_xxxxxxxxxxxxxxxxxxxxxx"
+}
 ```
 
 ### Serve
