@@ -22,6 +22,7 @@ export class StripeFormComponent implements OnInit {
   public cartPrice: number = 0;
   public cartCost: number = 0;
   public cartTax: number = 0;
+  private cartLength;
   private currentCart: FirebaseListObservable<any>;
 
   constructor(
@@ -52,14 +53,13 @@ export class StripeFormComponent implements OnInit {
     this.productsInCart = this.productService.getItemsInCart(this.userId);
     this.currentCart = this.productService.getCurrentCart(this.userId);
     this.currentCart.subscribe(cart => {
-      console.log("subscribing!");
+
+      vm.cartLength = cart.length;
       cart.forEach(function(item) {
         vm.cartPrice += parseInt(item.price);
       });
-      console.log("this.cartPrice: " + vm.cartPrice);
       vm.cartTax = vm.cartPrice * 0.098;
       vm.cartCost = vm.cartPrice + this.cartTax;
-      console.log("totalPrice: " + vm.cartPrice + " tax: " + vm.cartTax + ", cost: " + vm.cartCost)
     });
 
 

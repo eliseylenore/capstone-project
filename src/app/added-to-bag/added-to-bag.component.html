@@ -1,20 +1,28 @@
-<input #id style="display: none" type="text" value="{{(productToDisplay | async)?.$key }}">
-<input #totalPrice style="display: none" type="text" value="{{(productToDisplay | async)?.totalPrice }}">
-<input #name style="display: none" type="text" value="{{(productToDisplay | async)?.name }}">
-<input #gender style="display: none" type="text" value="{{(productToDisplay | async)?.gender }}">
-<input #clothing style="display: none" type="text" value="{{(productToDisplay | async)?.clothing }}">
-<input #price style="display: none" type="text" value="{{(productToDisplay | async)?.price }}">
-<input #size style="display: none" type="text" value="{{(productToDisplay | async)?.size }}">
-<input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
-<input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
-<input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
-<button (click)="showAlert=true; newItem(id.value, name.value, gender.value, clothing.value, price.value, size.value, color.value, description.value, imageUrl.value)" class="btn btn-default" *ngIf="!showAlert">Add to cart!</button>
+<div *ngIf="!showAlert">
+  <input #id style="display: none" type="text" value="{{(productToDisplay | async)?.$key }}">
+  <input #totalPrice style="display: none" type="text" value="{{(productToDisplay | async)?.totalPrice }}">
+  <input #name style="display: none" type="text" value="{{(productToDisplay | async)?.name }}">
+  <input #gender style="display: none" type="text" value="{{(productToDisplay | async)?.gender }}">
+  <input #clothing style="display: none" type="text" value="{{(productToDisplay | async)?.clothing }}">
+  <input #price style="display: none" type="text" value="{{(productToDisplay | async)?.price }}">
+  <!-- <input #productSize style="display: none" type="text" value="{{(productToDisplay | async)?.size }}"> -->
+  <select type="select" #productSize name="productSize">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+    <option value="xlarge">Extra Large</option>
+  </select>
+  <input #color style="display: none" type="text" value="{{(productToDisplay | async)?.color }}">
+  <input #description style="display: none" type="text" value="{{(productToDisplay | async)?.description }}">
+  <input #imageUrl style="display: none" type="text" value="{{(productToDisplay | async)?.imageUrl }}">
+  <button (click)="showAlert=true; newItem(id.value, name.value, gender.value, clothing.value, price.value, productSize.value, color.value, description.value, imageUrl.value); setData(productSize.value)" class="btn btn-default">Add to cart!</button>
+<div>
 <div *ngIf="showAlert">
-<p class="red">
-  You've added {{(productToDisplay | async)?.name}} to your bag :)
-</p>
-  <div class="btn-group">
-    <button type="button" class="btn btn-sm btn-default red">Edit</button>
-    <button type="button" class="btn btn-sm btn-default red" (click)="showAlert=false">Remove</button>
-  </div>
+  <p class="red">
+    You've added {{(productToDisplay | async)?.name}} to your bag :)
+  </p>
+    <div class="btn-group">
+      <button type="button" class="btn btn-sm btn-default red">Edit</button>
+      <button type="button" class="btn btn-sm btn-default red" (click)="showAlert=false">Remove</button>
+    </div>
 </div>
