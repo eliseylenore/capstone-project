@@ -20,6 +20,7 @@ import { Router } from '@angular/router';
 
 export class StripeFormComponent implements OnInit {
   public isLoggedIn: Boolean;
+  public noCart: Boolean;
   private userId: String;
   public cartPrice: number = 0;
   public cartCost: number = 0;
@@ -42,7 +43,6 @@ export class StripeFormComponent implements OnInit {
         this.isLoggedIn = true;
       }
     });
-
   };
 
   productsInCart: FirebaseListObservable<any[]>;
@@ -55,8 +55,10 @@ export class StripeFormComponent implements OnInit {
     this.productsInCart = this.productService.getItemsInCart(this.userId);
     this.currentCart = this.productService.getCurrentCart(this.userId);
     this.currentCart.subscribe(cart => {
-
       vm.cartLength = cart.length;
+      if (vm.cartLength === 0) {
+        vm.noCart = true;
+      }
       cart.forEach(function(item) {
         vm.cartPrice += parseInt(item.price);
       });
