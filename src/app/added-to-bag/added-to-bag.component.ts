@@ -45,8 +45,7 @@ export class AddedToBagComponent implements OnInit{
           this.currentCart = this.productService.getCurrentCart(vm.userId);
           this.currentCart.subscribe(cart => {
             cart.forEach(function(item) {
-              if(vm.productId== item.id) {
-                console.log("show alert = true")
+              if(vm.productId==item.id) {
                 vm.showAlert = true;
               }
             });

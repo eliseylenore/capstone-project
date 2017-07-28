@@ -32,7 +32,7 @@
 </div>
 <div *ngIf="showAlert">
   <p class="red">
-    You've added {{(productToDisplay | async)?.name}} to your bag :)
+    {{(productToDisplay | async)?.name}} is already added to your bag :)
   </p>
   <div class="btn-group">
     <app-edit-item [userId]="userId"></app-edit-item>

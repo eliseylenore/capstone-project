@@ -18,7 +18,6 @@ app.get("/", (req, res) =>
 app.post("/charge", (req, res) => {
   let amount = 500;
   //Customer is charged $5
-
   stripe.customers.create({
      email: req.body.stripeEmail,
     source: req.body.stripeToken

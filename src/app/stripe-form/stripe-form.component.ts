@@ -2,18 +2,20 @@ import { AuthenticationService } from '../authentication.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
-import { Component, OnInit } from '@angular/core';
+import { PaymentService } from '../payment.service';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { masterStripeConfig } from '../api-keys';
 import { HttpClient } from '@angular/common/http';
 import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
+
 
 @Component({
   moduleId: module.id,
   selector: 'app-stripe-form',
   templateUrl: './stripe-form.component.html',
   styleUrls: ['./stripe-form.component.scss'],
-  providers: [ ProductService, AuthenticationService ]
+  providers: [ ProductService, AuthenticationService, PaymentService ]
 })
 
 export class StripeFormComponent implements OnInit {
@@ -24,13 +26,14 @@ export class StripeFormComponent implements OnInit {
   public cartTax: number = 0;
   private cartLength;
   private currentCart: FirebaseListObservable<any>;
-
+  handler: any;
   constructor(
     private http: HttpClient,
     public authService: AuthenticationService,
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
+    private paymentService: PaymentService
   ) {
     this.authService.user.subscribe(user => {
       if(user === null) {
@@ -70,19 +73,19 @@ export class StripeFormComponent implements OnInit {
   };
 
   openCheckout() {
-    var handler = (<any>window).StripeCheckout.configure({
+    var vm = this;
+    this.handler = (<any>window).StripeCheckout.configure({
       key: masterStripeConfig.PUBLISHABLE_KEY,
       locale: 'auto',
-      token: function (token: any) {
-          return this.http.post('/stripe.com/api/bootstrap?key=pk_test_O13VvsWUjRzTeq5SJhzKEAUT&locale=en-US/charge', token).subscribe(data => {
-            this.results = data['results'];
-          })
+      token: token => {
+        //send token back to the service to update it in the database
+        this.paymentService.processPayment(token, this.cartCost)
       }
     });
 
     var vm = this;
     document.getElementById('customButton').addEventListener('click', function(e) {
-      handler.open({
+      vm.handler.open({
         name: 'Total Cost: $' + vm.cartCost,
         description: 'Price: $' + vm.cartCost + ' + Sales Tax: $' + vm.cartTax,
         amount: vm.cartCost * 100,
@@ -92,7 +95,7 @@ export class StripeFormComponent implements OnInit {
     });
 
     window.addEventListener('popstate', function() {
-      handler.close();
+      vm.handler.close();
     });
   }
 }
