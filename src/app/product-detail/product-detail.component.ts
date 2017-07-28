@@ -29,6 +29,7 @@ export class ProductDetailComponent implements OnInit {
     this.authService.user.subscribe(user => {
       console.log(user.uid);
       if(user === null) {
+        this.userName = "null";
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;

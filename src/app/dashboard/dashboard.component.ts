@@ -24,6 +24,7 @@ export class DashboardComponent {
     this.authService.user.subscribe(user => {
       console.log(user);
       if(user === null) {
+        this.userId = "null";
         this.isLoggedIn = false;
       } else {
         this.isLoggedIn = true;
@@ -49,7 +50,7 @@ export class DashboardComponent {
   checkout() {
     this.authService.user.subscribe(user => {
       if(user === null) {
-        alert("Please sign in so you can view cart")
+        this.userId = "null"
       } else {
         this.userId = user.uid;
       }

@@ -56,5 +56,6 @@ export class EditItemComponent implements OnInit {
      vm.deleting=false;
      vm.doneDeleting=true;
    }
+   this.router.navigate(['stripe', this.userId]);
  }
 }

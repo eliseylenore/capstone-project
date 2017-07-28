@@ -14,7 +14,6 @@ import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/d
   providers: [ProductService, AuthenticationService]
 })
 
-
 export class AddedToBagComponent implements OnInit{
   private currentCart: FirebaseListObservable<any>;
   public userId: string;
@@ -40,7 +39,15 @@ export class AddedToBagComponent implements OnInit{
       // this.productToDisplayFirebase = this.productService.getProductById(vm.productToDisplay);
       this.authService.user.subscribe(user => {
         if(user === null) {
-          this.userId = null;
+          this.userId = "null";
+          this.currentCart = this.productService.getCurrentCart(vm.userId);
+          this.currentCart.subscribe(cart => {
+            cart.forEach(function(item) {
+              if(vm.productId==item.id) {
+                vm.showAlert = true;
+              }
+            });
+          });
         } else {
           this.userId = user.uid;
           this.currentCart = this.productService.getCurrentCart(vm.userId);
@@ -81,7 +88,7 @@ export class AddedToBagComponent implements OnInit{
   checkout() {
     this.authService.user.subscribe(user => {
       if(user === null) {
-        alert("Please sign in so you can view cart")
+        this.userId = "null"
       } else {
         this.userId = user.uid;
       }
