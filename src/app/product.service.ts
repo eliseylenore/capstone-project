@@ -79,7 +79,17 @@ export class ProductService {
   moveCurrentCart(userId) {
     var currentCart = this.getCurrentCart(userId);
     var pastCarts: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/pastCarts');
-    pastCarts.push(currentCart);
+    var cartToPush;
+    currentCart.subscribe(cart => {
+      console.log("cart: " + JSON.stringify(cart));
+      // var totalCost;
+      // cart.items.forEach(function(item) {
+      //   totalCost += item.cost;
+      // })
+      // var cartToPush = {id: cart.id, items: cart.items, totalCost: totalCost }
+    })
+
+    pastCarts.push(cartToPush);
     currentCart.remove();
   }
 }

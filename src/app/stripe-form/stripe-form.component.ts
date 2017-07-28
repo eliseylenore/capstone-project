@@ -76,7 +76,9 @@ export class StripeFormComponent implements OnInit {
       locale: 'auto',
       token: token => {
         //send token back to the service to update it in the database
-        this.paymentService.processPayment(token, this.cartCost)
+        this.paymentService.processPayment(token, this.cartCost);
+        this.productService.moveCurrentCart(vm.userId);
+        alert("Checkout has been created!");
       }
     });
 

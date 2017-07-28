@@ -6,6 +6,7 @@
   <div class="row">
     <h2 class="col-xs-3">Total Price: ${{cartCost}}</h2>
     <h2 class="col-xs-2">Items: {{cartLength}}</h2>
+    <button class="btn btn-default" id="customButton"(click)="openCheckout()">Purchase</button>
   </div>
 
   <div class="row product-list">
@@ -29,5 +30,4 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-default" id="customButton"(click)="openCheckout()">Purchase</button>
 </div>
