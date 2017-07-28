@@ -3,7 +3,7 @@
 </div>
 <div class="container">
   <h1 *ngIf="noCart">Nothing is in your cart yet!</h1>
-  <a class="navbar-brand" href="/">Go shopping</a>
+  <a *ngIf="noCart" class="navbar-brand" href="/">Go shopping</a>
   <div *ngIf="!noCart">
     <h1>Order Summary</h1>
     <div class="row">

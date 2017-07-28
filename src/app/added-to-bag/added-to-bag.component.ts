@@ -83,6 +83,7 @@ export class AddedToBagComponent implements OnInit{
       //console.log("total price: $" + newCart.totalPrice);
       this.productService.addItemToCart(newItem, this.userId);
       //this.productService.addCart(newCart);
+      this.router.navigate(['stripe', this.userId]);
   }
 
   checkout() {
