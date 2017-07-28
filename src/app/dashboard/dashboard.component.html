@@ -8,7 +8,7 @@
     <ul *ngIf="isWideEnough || showMenu" class="nav navbar-nav navbar-right">
       <li><a routerLink="">Products</a></li>
       <li><a routerLink="about">About</a></li>
-      <li class="cart-container"><a (click)="checkout()" class="cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a><a *ngIf="isLoggedIn" class="user">{{userName}}</a>
+      <li class="cart-container" (click)="checkout()"><a class="cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a><a *ngIf="isLoggedIn" class="user">{{userName}}</a>
       </li>
       <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
       <li *ngIf="!isLoggedIn"><a (click)="login()">Sign In</a></li>

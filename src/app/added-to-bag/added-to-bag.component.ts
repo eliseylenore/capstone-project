@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Params, Route } from '@angular/router';
+import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 import { Product } from './../product.model';
 import { Cart } from './../cart.model';
 import { ProductService } from '../product.service';
@@ -27,7 +27,8 @@ export class AddedToBagComponent implements OnInit{
     public authService: AuthenticationService,
     private route: ActivatedRoute,
     private productService: ProductService,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {
     }
 
@@ -75,5 +76,16 @@ export class AddedToBagComponent implements OnInit{
       //console.log("total price: $" + newCart.totalPrice);
       this.productService.addItemToCart(newItem, this.userId);
       //this.productService.addCart(newCart);
+  }
+
+  checkout() {
+    this.authService.user.subscribe(user => {
+      if(user === null) {
+        alert("Please sign in so you can view cart")
+      } else {
+        this.userId = user.uid;
+      }
+      this.router.navigate(['stripe', this.userId]);
+    });
   }
 }

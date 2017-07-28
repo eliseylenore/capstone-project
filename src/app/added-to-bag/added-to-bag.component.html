@@ -2,7 +2,7 @@
 <div *ngIf="!showAlert" class="form-inline">
   <div class="form-group">
     <label>Quantity</label>
-    <select type="select" class="form-control" #quantity>
+    <select type="select" class="form-control" #quantity required>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -18,7 +18,7 @@
   <!-- <input #productSize style="display: none" type="text" value="{{(productToDisplay | async)?.size }}"> -->
   <div class="form-group">
     <label>Size</label>
-    <select class="form-control" type="select" #productSize name="productSize">
+    <select class="form-control" type="select" #productSize name="productSize" required>
       <option value="small">Small</option>
       <option value="medium">Medium</option>
       <option value="large">Large</option>
@@ -36,6 +36,6 @@
   </p>
   <div class="btn-group">
     <app-edit-item [userId]="userId"></app-edit-item>
-    <button type="button" class="btn btn-sm btn-default red" (click)="showAlert=false">Add more items of different size</button>
+    <button type="button" class="btn btn-sm btn-default red" (click)="checkout()">Go to cart</button>
   </div>
 </div>
