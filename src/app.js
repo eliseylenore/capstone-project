@@ -1,5 +1,5 @@
 'use strict';
-import { masterStripeConfig } from './app/api-keys';
+import { masterStripeConfig } from './api-keys';
 const bodyParser = require('body-parser');
 
 const keyPublishable = masterStripeConfig.PUBLISHABLE_KEY;

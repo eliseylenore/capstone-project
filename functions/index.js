@@ -1,10 +1,9 @@
+
+
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
-const keyPublishable = masterStripeConfig.PUBLISHABLE_KEY;
-const keySecret = masterStripeConfig.SECRET_KEY;
-admin.initializeApp(functions.config().firebase);
 
-const stripe = require('stripe')(keySecret)
+const stripe = require('stripe')(functions.config().stripe.testkey)
 
 exports.stripeCharge = functions.database
                                 .ref('/payments/{userId}/{paymentId}')

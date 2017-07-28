@@ -75,4 +75,11 @@ export class ProductService {
   getProductById(productId: string) {
     return this.database.object('products/' + productId);
   }
+
+  moveCurrentCart(userId) {
+    var currentCart = this.getCurrentCart(userId);
+    var pastCarts: FirebaseListObservable<any> = this.database.list('/allCarts/' + userId + '/pastCarts');
+    pastCarts.push(currentCart);
+    currentCart.remove();
+  }
 }

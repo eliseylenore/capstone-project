@@ -35,7 +35,9 @@ export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
-  storageBucket: masterFirebaseConfig.storageBucket
+  storageBucket: masterFirebaseConfig.storageBucket,
+  projectId: masterFirebaseConfig.projectId,
+  messagingSenderId: masterFirebaseConfig.messagingSenderId
 };
 
 firebase.initializeApp(firebaseConfig);

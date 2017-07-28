@@ -63,9 +63,6 @@ export class StripeFormComponent implements OnInit {
       vm.cartTax = vm.cartPrice * 0.098;
       vm.cartCost = vm.cartPrice + this.cartTax;
     });
-
-
-
   }
 
   goToDetailPage(clickedProductKey) {
@@ -89,7 +86,9 @@ export class StripeFormComponent implements OnInit {
         name: 'Total Cost: $' + vm.cartCost,
         description: 'Price: $' + vm.cartCost + ' + Sales Tax: $' + vm.cartTax,
         amount: vm.cartCost * 100,
-        zipCode: 'true'
+        zipCode: 'true',
+        billingAddress: 'true',
+        shippingAddress: 'true'
       });
       e.preventDefault();
     });
