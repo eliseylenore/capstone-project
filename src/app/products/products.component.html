@@ -15,13 +15,6 @@
     </ng-template>
     <div [hidden]="!filterItems" class="form-inline">
       <div class="form-group">
-        <select class="form-control" (change)="onSizeChange($event.target.value)">
-          <option value="smallProducts">Small</option>
-          <option value="mediumProducts">Medium</option>
-          <option value="largeProducts">Large</option>
-        </select>
-      </div>
-      <div class="form-group">
         <select  class="form-control" (change)="onGenderChange($event.target.value)">
           <option value="allGenders" selected="selected">Gender</option>
           <option value="female">Women</option>
