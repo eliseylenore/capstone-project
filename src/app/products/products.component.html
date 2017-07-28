@@ -16,7 +16,6 @@
     <div [hidden]="!filterItems" class="form-inline">
       <div class="form-group">
         <select class="form-control" (change)="onSizeChange($event.target.value)">
-          <option value="allSizes" selected="selected">Size</option>
           <option value="smallProducts">Small</option>
           <option value="mediumProducts">Medium</option>
           <option value="largeProducts">Large</option>
@@ -59,7 +58,7 @@
   </div>
 </div>
 <div class="row product-list">
-  <div *ngFor="let product of products | async | size:filterBySize | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="col-sm-6 item" (click)="goToDetailPage(product)">
+  <div *ngFor="let product of products | async | gender:filterByGender | color: filterByColor | price: filterByPrice | clothing: filterByClothing" class="col-sm-6 item" (click)="goToDetailPage(product)">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-xs-5">
