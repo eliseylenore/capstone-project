@@ -1,28 +1,33 @@
-<h1>Order Summary</h1>
-<div class="row">
-  <h2 class="col-xs-4">Total Price: ${{cartCost}}</h2>
-  <h2 class="col-xs-2">Items: {{cartLength}}</h2>
-</div>
 
-<div class="row product-list">
-  <div *ngFor="let product of productsInCart | async" class="col-sm-6 item" (click)="goToDetailPage(product.id)">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="col-xs-5">
-          <div class="img" [ngStyle]= "{'background-image': 'url(' + product.imageUrl + ')'}">
+<div class="business-header">
+</div>
+<div class="container">
+  <h1>Order Summary</h1>
+  <div class="row">
+    <h2 class="col-xs-3">Total Price: ${{cartCost}}</h2>
+    <h2 class="col-xs-2">Items: {{cartLength}}</h2>
+  </div>
+
+  <div class="row product-list">
+    <div *ngFor="let product of productsInCart | async" class="col-sm-6 item" (click)="goToDetailPage(product.id)">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="col-xs-5">
+            <div class="img" [ngStyle]= "{'background-image': 'url(' + product.imageUrl + ')'}">
+            </div>
+            <!-- <img src="{{product.imageUrl}}"/> -->
           </div>
-          <!-- <img src="{{product.imageUrl}}"/> -->
-        </div>
-        <div class="col-xs-7">
-          <h5>{{product.name}}</h5>
-          <h4>${{product.price}}</h4>
-          <h3>Quantity: {{product.quantity}}</h3>
-          <p>Size: {{product.size}}</p>
-          <a>Edit</a>
-          <a>Delete</a>
+          <div class="col-xs-7">
+            <h5>{{product.name}}</h5>
+            <h4>${{product.price}}</h4>
+            <h3>Quantity: {{product.quantity}}</h3>
+            <p>Size: {{product.size}}</p>
+            <a>Edit</a>
+            <a>Delete</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <button class="btn btn-default" id="customButton"(click)="openCheckout()">Purchase</button>
 </div>
-<button class="btn btn-default" id="customButton"(click)="openCheckout()">Purchase</button>

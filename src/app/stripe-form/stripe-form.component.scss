@@ -1,1 +1,19 @@
 @import '../product-detail/product-detail.component';
+
+.business-header {
+  z-index: -1;
+  height: calc(100vh);
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url('/assets/img/notebook.jpg') center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
