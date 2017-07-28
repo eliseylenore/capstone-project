@@ -4,10 +4,10 @@
   left: 0px;
   right: 0px;
   background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
+    // linear-gradient(
+    //   rgba(255, 255, 255, 0.45),
+    //   rgba(255, 255, 255, 0.45)
+    // ),
     url('/assets/img/office.jpeg') center center no-repeat scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,18 +15,23 @@
   -o-background-size: cover;
 }
 .space, .big-space {
-  height: 25px;
+  height: 50px;
 }
-
+.col-sm-9 {
+  background: rgba(255,255,255, .8);
+  border-radius: 10px;
+  padding-bottom: 40px;
+  margin: 0 30px;
+}
 
 /********* Fonts *******/
 .banner-title {
-  color: white;
   font-size: 50px;
+  margin-top: 20px;
 }
 .paragraph-text {
-  color: white;
-  line-height: 25px;
+  font-size: 16px;
+  line-height: 30px;
   padding: 20px;
 }
 .big-text {
@@ -34,9 +39,10 @@
 }
 
 /********* Media Queries *******/
-@media (min-width: 991px) {
+@media (min-width: 1000px) {
   .paragraph-text {
-    padding: 20px 50px;
-    margin: 0px 75px;
+    padding: 20px 20px;
+    margin: 0px 50px;
+    line-height: 40px;
   }
 }

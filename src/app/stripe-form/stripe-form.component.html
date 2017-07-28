@@ -1,6 +1,8 @@
 <h1>Order Summary</h1>
-<h2>Total Price: ${{cartCost}}</h2>
-<h3>Items: {{cartLength}}</h3>
+<div class="row">
+  <h2 class="col-xs-4">Total Price: ${{cartCost}}</h2>
+  <h2 class="col-xs-2">Items: {{cartLength}}</h2>
+</div>
 
 <div class="row product-list">
   <div *ngFor="let product of productsInCart | async" class="col-sm-6 item" (click)="goToDetailPage(product.id)">

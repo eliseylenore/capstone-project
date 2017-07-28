@@ -15,18 +15,18 @@ h5 {
 
 .btn-default {
   border: none;
-  background-color: #e6e6e6;
 }
 
 .form-control {
   border: none;
-  background: #F8B16C;
-  color: white;
   height: 25px;
   padding: 3px;
   select {
     border-radius: 0;
   }
+}
+a {
+  color: firebrick;
 }
 a:hover {
   cursor: pointer;
@@ -62,10 +62,10 @@ a:hover {
   right: 0px;
   background:
     linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.45)
     ),
-    url('/assets/img/professional.jpg') center center no-repeat scroll;
+    url('/assets/img/desk.jpeg') center center no-repeat scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -80,8 +80,9 @@ a:hover {
 
 /********* Fonts *******/
 .banner-title {
-  color: white;
+  color: black;
   font-size: 50px;
+  padding-top: 20px;
 }
 .paragraph-text {
   line-height: 25px;
