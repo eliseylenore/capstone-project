@@ -20,6 +20,17 @@ export class ProductService {
     this.carts = database.list('carts');
   }
 
+  getSearchedProducts(start, end): FirebaseListObservable<any> {
+    return this.database.list('/products', {
+      query: {
+        orderByChild: 'name',
+        limitToFirst: 10,
+        startAt: start,
+        endAt: end
+      }
+    });
+  }
+
   getProducts() {
     return this.products;
   }

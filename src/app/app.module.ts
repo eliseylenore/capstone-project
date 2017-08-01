@@ -28,6 +28,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { StripeFormComponent } from './stripe-form/stripe-form.component';
 import { CustomFormComponent } from './custom-form/custom-form.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -58,7 +59,8 @@ firebase.initializeApp(firebaseConfig);
     AuthenticationComponent,
     StripeFormComponent,
     CustomFormComponent,
-    EditItemComponent
+    EditItemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

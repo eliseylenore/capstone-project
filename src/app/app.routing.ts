@@ -6,6 +6,7 @@ import {ProductDetailComponent } from './product-detail/product-detail.component
 import {AuthenticationComponent} from './authentication/authentication.component';
 import {StripeFormComponent} from './stripe-form/stripe-form.component';
 import {CustomFormComponent} from './custom-form/custom-form.component';
+import {SearchComponent} from './search/search.component';
 
 const appRoutes: Routes = [
   {
@@ -31,6 +32,10 @@ const appRoutes: Routes = [
   {
     path: 'custom-form',
     component: CustomFormComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 
