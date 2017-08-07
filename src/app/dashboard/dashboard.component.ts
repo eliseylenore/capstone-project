@@ -67,7 +67,6 @@ export class DashboardComponent {
   }
 
   searchThis(search) {
-    alert("HHHEYYY");
       this.router.navigate(['search', search]);
   }
 }
