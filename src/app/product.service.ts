@@ -20,21 +20,30 @@ export class ProductService {
     this.carts = database.list('carts');
   }
 
-  getSearchedProducts(start, end): FirebaseListObservable<any> {
-    return this.database.list('/products', {
-      query: {
-        orderByChild: 'name',
-        limitToFirst: 10,
-        startAt: start,
-        endAt: end
-      }
-    });
-  }
-
   getProducts() {
     return this.products;
   }
 
+  getSearchedProducts(search: string) {
+    var searchRef = search.toLowerCase();
+    var foundProducts = new Array();
+    //Iterate through all products
+    this.getProducts().subscribe(products => {
+      console.log("products!!! " + JSON.stringify(products))
+      products.forEach(index => {
+        //if title contains search string add to foundProducts array
+        if(index.name.toLowerCase().includes(search)) {
+          foundProducts.push(index);
+        } else {
+          if(index.clothing.toLowerCase().includes(search)) {
+            //if title doesn't contain through the string, iterate through the product types
+            foundProducts.push(index);
+          }
+        }
+      })
+    })
+    return foundProducts;
+  }
   getCartItem(productKey, userId) {
     let cartItem;
     let cartItems = this.database.list('/allCarts/'+ userId + '/currentCart/items');

@@ -18,14 +18,13 @@ export class SearchComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.productService.getSearchedProducts(this.startAt, this.endAt)
+    this.productService.getProducts()
       .subscribe(products => this.products = products)
   }
 
-  search($event) {
-      let q = $event.target.value
-      this.startAt.next(q)
-      this.endAt.next(q+"\uf8ff")
+  search(search) {
+    this.products = this.productService.getSearchedProducts(search);
+    console.log("products: " + JSON.stringify(this.products));
   }
 
 }

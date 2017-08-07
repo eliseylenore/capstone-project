@@ -1,20 +1,20 @@
 <h1>Product Search</h1>
 
-<input type="text" (keydown)="search($event)" placeholder="Search products" class="input">
+<input type="text" [(ngModel)]="search.value" (keydown)="search(search.value)" placeholder="Search products" class="input">
 
 <div class="row product-list">
   <div *ngFor="let product of products" class="col-sm-6 item" (click)="goToDetailPage(product)">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-xs-5">
-          <div class="img" [ngStyle]= "{'background-image': 'url(' + product?.imageUrl + ')'}">
+          <div class="img" [ngStyle]= "{'background-image': 'url(' + product.imageUrl + ')'}">
           </div>
         </div>
         <div class="col-xs-7">
-          <h5>{{product?.name}}</h5>
-          <h4>${{product?.price}}</h4>
+          <h5>{{product.name}}</h5>
+          <h4>${{product.price}}</h4>
           <h3>Description</h3>
-          <p>{{product?.description}}</p>
+          <p>{{product.description}}</p>
         </div>
       </div>
     </div>
