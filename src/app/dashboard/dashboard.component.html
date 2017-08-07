@@ -12,6 +12,14 @@
       </li>
       <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
       <li *ngIf="!isLoggedIn"><a (click)="login()">Sign In</a></li>
+      <form (submit)="searchThis(search)">
+        <div class="input-group" *ngIf="isWideEnough || showMenu" >
+          <input type="text" class="form-control" [(ngModel)]="search" name="search" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Go!</button>
+          </span>
+        </div>
+      </form>
     </ul>
 
   </div>

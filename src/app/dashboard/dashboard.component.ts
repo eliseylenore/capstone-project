@@ -65,4 +65,9 @@ export class DashboardComponent {
   logout() {
     this.authService.logout();
   }
+
+  searchThis(search) {
+    alert("HHHEYYY");
+      this.router.navigate(['search', search]);
+  }
 }

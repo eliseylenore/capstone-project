@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     component: CustomFormComponent
   },
   {
-    path: 'search',
+    path: 'search/:search',
     component: SearchComponent
   }
 ];

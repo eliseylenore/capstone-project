@@ -52,6 +52,22 @@
   align-items: center;
 }
 
+.input-group {
+  margin-top: 8px;
+  .form-control {
+    width: 100px;
+    padding: 5px;
+    margin-left:10px;
+  }
+}
+.input-group-btn {
+  width: 0;
+  height: 20px;
+}
+form {
+  display: inline-block;
+}
+
 /**************
 Media Queries
 **************/
