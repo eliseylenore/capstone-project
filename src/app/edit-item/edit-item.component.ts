@@ -12,6 +12,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class EditItemComponent implements OnInit {
   @Input() userId;
+  public doneEditing;
+  public editing;
   public isLoggedIn: Boolean;
   private item: FirebaseObjectObservable<any>;
   private productId: String;

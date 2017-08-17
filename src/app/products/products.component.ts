@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) {}
   products: FirebaseListObservable<any[]>;
-
+  filterItems: boolean;
   filterBySize: string = "allSizes";
   filterByGender: string = "allGenders";
   filterByColor: string = "allColors";
