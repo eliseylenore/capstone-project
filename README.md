@@ -2,7 +2,7 @@
 ### By **Elise St Hilaire**
 
 ## Online store for fabulous job seekers, 05/15/2017
-## Live Link [https://capstone-project-9ac28.firebaseapp.com/](https://capstone-project-9ac28.firebaseapp.com/)_
+### Check out hosted site here: [https://capstone-project-9ac28.firebaseapp.com/](https://capstone-project-9ac28.firebaseapp.com/)_
 ![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)
 
 ### Description
