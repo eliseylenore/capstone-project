@@ -27,7 +27,6 @@ export class ProductDetailComponent implements OnInit {
     private productService: ProductService
   ) {
     this.authService.user.subscribe(user => {
-      console.log(user.uid);
       if(user === null) {
         this.userName = "null";
         this.isLoggedIn = false;
@@ -36,6 +35,7 @@ export class ProductDetailComponent implements OnInit {
         this.userName = user.displayName;
       }
     });
+
   }
 
   ngOnInit() {

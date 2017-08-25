@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthenticationService } from '../authentication.service';
 import { Http } from '@angular/http';
-import { Router } from '@angular/router';
+import { Router, NavigationStart, Event  } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,6 +19,7 @@ export class DashboardComponent {
   isWideEnough: Boolean;
   showMenu: Boolean;
   userId: String;
+  onSearchPage: Boolean;
 
   constructor(public authService: AuthenticationService, private router: Router, private http: Http) {
     this.authService.user.subscribe(user => {
@@ -34,6 +35,19 @@ export class DashboardComponent {
       this.innerHeight = (window.screen.height) + "px";
       this.innerWidth = (window.screen.width) + "px";
       this.isWideEnough = innerWidth > 691;
+    });
+
+    router.events.subscribe(event => {
+      if (event.constructor.name === 'NavigationEnd') {
+        console.log(router.url);
+        if (router.url.startsWith("/search")) {
+          this.onSearchPage = true;
+          console.log("on search page? " + this.onSearchPage);
+        } else {
+          this.onSearchPage = false;
+        }
+
+      }
     });
   }
 
