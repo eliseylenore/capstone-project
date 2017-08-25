@@ -1,9 +1,8 @@
 # Capstone Project: Dress To Impress
-### By **Elise St Hilaire**
+### By **Elise St Hilaire**, hosted site here: [https://capstone-project-9ac28.firebaseapp.com/](https://capstone-project-9ac28.firebaseapp.com/)_
+![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)
 
 ## Online store for fabulous job seekers, 05/15/2017
-### Check out hosted site here: [https://capstone-project-9ac28.firebaseapp.com/](https://capstone-project-9ac28.firebaseapp.com/)_
-![alt text](https://pbs.twimg.com/media/BvWSoLzCIAEjViD.jpg)
 
 ### Description
 _As job seekers ourselves, we know that looking for a full-time job is not for the faint of heart. Even the smallest things can effect an impression. Since this is the case, we decided to open an online store that helps job seekers find professional-looking, worry-free clothing._

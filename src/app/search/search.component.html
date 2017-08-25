@@ -1,6 +1,11 @@
 <h1>Product Search</h1>
 
-<input type="text" [(ngModel)]="search" (keydown)="searchThis(search)" placeholder="Search products" class="input">
+<div class="input-group col-xs-6">
+  <input type="text" [(ngModel)]="search" (keydown)="searchThis(search)" placeholder="Search products" class="input form-control">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="submit">Go!</button>
+  </span>
+</div>
 
 <div class="row product-list">
   <div *ngFor="let product of products" class="col-sm-6 item" (click)="goToDetailPage(product)">
